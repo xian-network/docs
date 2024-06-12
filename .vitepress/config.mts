@@ -5,6 +5,8 @@ export default defineConfig({
   title: "Xian Network Docs",
   description: "The documentation for the Xian Blockchain",
   themeConfig: {
+    logo: '/xian-logo.png',
+
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
