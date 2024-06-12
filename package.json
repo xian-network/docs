@@ -1,8 +1,9 @@
 {
   "scripts": {
-    "docs:dev": "vitepress dev",
-    "docs:build": "vitepress build --outDir ./docs",
-    "docs:preview": "vitepress preview --outDir ./docs"
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "build:prod": "vitepress build --outDir ./docs",
+    "preview": "vitepress preview --outDir ./docs"
   }
 }
 
