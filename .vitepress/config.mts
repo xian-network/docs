@@ -40,6 +40,7 @@ export default defineConfig({
     ],
   },
   cleanUrls: true,
-  srcDir: './src'
+  srcDir: './src',
+  base: '/vitepress/'
 
 })
