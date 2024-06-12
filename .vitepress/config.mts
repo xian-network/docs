@@ -43,7 +43,7 @@ export default defineConfig({
         text: 'Examples',
         collapsed: false,
         items: [
-          { text: 'Dice Example', link: '/examples/dice-example' },
+          { text: 'Uber Dice', link: '/examples/uber-dice-example' },
         ]
       }
     ],
