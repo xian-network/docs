@@ -29,6 +29,15 @@ export default defineConfig({
         ]
       },
       {
+        text: 'Libraries',
+        collapsed: true,
+        items: [
+          { text: 'contracting', link: '/libraries/' },
+          { text: 'xian-js', link: '/libraries/xian-js' },
+          { text: 'xian-py', link: '/libraries/xian-py' },
+        ]
+      },
+      {
         text: 'Tutorials',
         collapsed: false,
         items: [
