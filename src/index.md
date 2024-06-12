@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "Xian Blockchain Docs"
+  name: "Xian Blockchain"
   text: "It's really great :D"
   tagline: Blockchain development so easy, your 6 month old nephew can do it.
   actions:
