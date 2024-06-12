@@ -11,10 +11,13 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Smart Contracts', link: '/smart-contracts/' },
-      { text: 'Tutorials', link: '/tutorials/example-tutorial' }
+      { text: 'Examples', link: '/examples/dice-example' }
     ],
 
     sidebar: [
+      {
+        text: 'Overview', link: '/overview/',
+      },
       {
         text: 'Smart Contracts',
         collapsed: false,
@@ -30,18 +33,17 @@ export default defineConfig({
       },
       {
         text: 'Libraries',
-        collapsed: true,
+        collapsed: false,
         items: [
-          { text: 'contracting', link: '/libraries/' },
           { text: 'xian-js', link: '/libraries/xian-js' },
           { text: 'xian-py', link: '/libraries/xian-py' },
         ]
       },
       {
-        text: 'Tutorials',
+        text: 'Examples',
         collapsed: false,
         items: [
-          { text: 'Example Tutorial', link: '/tutorials/example-tutorial' },
+          { text: 'Dice Example', link: '/examples/dice-example' },
         ]
       }
     ],

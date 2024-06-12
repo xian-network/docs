@@ -1,11 +1,13 @@
 ---
-title: Example Tutorial
-description: This is an example tutorial
+title: Dice Example
+description: Example Xian Smart Contract based Dice game with random functions and house edge. Range based dice with multiplier winnings based on range.
+
+
 ---
 
-# Example Tutorial
+# Dice Example
+Example Xian Smart Contract based Dice game with random functions and house edge. Range based dice with multiplier winnings based on range.
 
-This is an example of an embeded sandbox running a codesandbox container.
 
 This can be used to quickly launch an interactive environment for learning and experimenting with Xian's smart contracting library.
 
