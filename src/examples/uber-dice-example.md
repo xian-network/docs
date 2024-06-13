@@ -13,10 +13,9 @@ This example demonstrates :
 - How to configure a test harness.
 - How to prove the functionality within the contract works as expected.
 :::tip
-*You will need to create an account with codesandbox.com to interact with the sandbox.*
+*You will need to create a **free** account with codesandbox.com to interact with the sandbox.*
 :::
 
-<a href="https://codesandbox.io/p/github/xian-network/dice-game/sandbox?embed=1&file=%2FREADME.md" target="_blank">
-  <img height="70%" width="70%" alt="Edit xian-network/dice-game/sandbox" src="./uber-dice-example-sandbox.png">
-</a>
+<img height="100%" width="100%" alt="Edit xian-network/dice-game/sandbox" src="./uber-dice-example-sandbox.png">
 
+[![Edit xian-network/dice-game/sandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/p/github/xian-network/dice-game/sandbox?embed=1&file=%2FREADME.md)
