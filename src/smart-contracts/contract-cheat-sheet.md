@@ -3,11 +3,11 @@ title: Contracting Cheat Sheet
 description: Here is a reference contract showcasing many of the syntax and features of Contracting.
 ---
 
-# {{$frontmatter.title}}
+# Contracting Cheat Sheet
 
 ## Reference Contract
 
-{{$frontmatter.description}}
+Here is a reference contract showcasing many of the syntax and features of Contracting.
 
 
 ```python

@@ -3,10 +3,9 @@ title: Functions
 description: Functions in Contracting.
 ---
 
-# {{$frontmatter.title}}
+# Functions
 
-
-## Available functions in Contracting
+**Types of functions in Contracting**
 
 ## @export
 You have to define at least one `@export` decorated function in your smart contract. Otherwise, the smart contract has no functions for people to call.

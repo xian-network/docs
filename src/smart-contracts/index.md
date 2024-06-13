@@ -3,8 +3,8 @@ title: Contracting Library
 description: The Contracting library is a subset of Python designed for writing, testing, and deploying smart contracts with ease and efficiency. It makes blockchain development as intuitive and accessible as possible, leveraging the simplicity of Python to offer a seamless smart contract development experience.
 ---
 
-# {{ $frontmatter.title }}
-{{ $frontmatter.description }}
+# Contracting Library
+The Contracting library is a subset of Python designed for writing, testing, and deploying smart contracts with ease and efficiency. It makes blockchain development as intuitive and accessible as possible, leveraging the simplicity of Python to offer a seamless smart contract development experience.
 
 
 ## Introduction

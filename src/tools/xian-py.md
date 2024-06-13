@@ -3,9 +3,9 @@ title: xian-py
 description: xian-py is a Python library for interacting with the Xian network.
 ---
 
-# {{$frontmatter.title}}
+# xian-py
 
-{{$frontmatter.description}}
+xian-py is a Python library for interacting with the Xian network.
 
 
 ## How to install

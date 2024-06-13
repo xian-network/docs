@@ -3,9 +3,9 @@ title: xian-js
 description: xian-js is a JavaScript / Typescript library for interacting with the Xian network.
 ---
 
-# {{$frontmatter.title}}
+# xian-js
 
-{{$frontmatter.description}}
+xian-js is a JavaScript / Typescript library for interacting with the Xian network.
 
 ### Installation
 

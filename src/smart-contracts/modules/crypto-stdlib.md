@@ -1,4 +1,4 @@
-## Crypto Standard Library
+# Crypto Standard Library
 
 In this example, the `verify_signature` function is an exported function in a Xian smart contract. It takes a verification key `vk`, a message `msg`, and a signature `signature`. It uses the `verify` function from the crypto module to check if the signature is valid for the given message and verification key. The result (True or False) is then returned. This can be used to ensure data integrity and authenticity in transactions within the smart contract environment.
 
