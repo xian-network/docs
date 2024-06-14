@@ -14,7 +14,7 @@ Xian's blockchain architecture is built upon several foundational layers, each s
 
 1. **Transaction Flow**:
    * Users interact with the Xian blockchain by submitting transactions through client applications. These transactions are always smart contract executions.
-   * Transactions are first broadcast to the network and then picked up by validators.
+   * Transactions are first broadcast to a node and the gossip protocol takes care of every node picking it up.
    * Validators use the CometBFT consensus engine to agree on the validity and order of transactions, ensuring that all nodes maintain a consistent state.
 2. **Smart Contract Execution**:
    * When a transaction involves a smart contract, it is executed within the Application Layer, specifically within the sandboxed environment provided by Contracting.
