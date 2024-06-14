@@ -13,7 +13,7 @@ xian-js is a JavaScript / Typescript library for interacting with the Xian netwo
 
 ### Wallet Functions
 
-#### Create a Xian Keypair
+## Create a Xian Keypair
 
 ```typescript
 import Xian from "xian-js"
@@ -30,7 +30,7 @@ console.log(new_wallet)
 ```
 
 
-### Create a new BIP39 / BIP 32 compatible wallet
+## Create a new BIP39 / BIP 32 compatible wallet
 - **BIP39** = 24 word mnemonic
 - **BIP32** = derivation path
 
@@ -48,7 +48,7 @@ console.log(new_wallet_bip39)
 
 ```
 
-### Create a wallet from sk (private key)
+## Create a wallet from sk (private key)
 
 ```javascript
 const sk = 'a6b72cb3d1160c26f9f39a8f1d4a3c7c0da2ac59d193b66ac5f919ec77f28915'
@@ -66,7 +66,7 @@ console.log(wallet)
    }
 
 ```
-### Restore a  BIP39 / BIP 32 compatible wallet
+## Restore a  BIP39 / BIP 32 compatible wallet
 - **BIP39** = 24 word mnemonic
 - **BIP32** = derivation path
 
@@ -86,7 +86,7 @@ console.log(wallet)
 ```
 
 
-### Get a public key (vk) from a private key (sk)
+## Get a public key (vk) from a private key (sk)
 Takes the sk as an argument and returns the vk
 ```javascript
 let sk = "69a8db3fb7196debc2711fad1fa1935918d09f5d8900d84c3288ea5237611c03"
@@ -96,7 +96,7 @@ console.log(vk)
 >> 'ea2cee33f9478d767d67afe345592ef36446ee04f8d588fa76942e6569a53298'
 ```
 
-### Sign a message
+## Sign a message
 Signs a string payload
 ```javascript
 const stringBuffer = Buffer.from('message')
@@ -109,7 +109,7 @@ console.log(signedMessage)
 >> '982c204fe88e620f3319558aa6b11f9d8be75b99b3199f434f5edf2834a9c52059ba4ea3d623ac1d550170e532e919c364aad1333f757f8f22e0355cb1dd8c09'
 ```
 
-#### Verify signature
+## Verify signature
 verify a payload
 ```javascript
 let validSignature = wallet.verify(vk, messageBytes, signedMessage)
@@ -123,7 +123,7 @@ Public Testnet masternode host is `https://testnet.xian.org`
 
 Use `Xian.TransactionBuilder(network_info, tx_info)` to create a new Xian transaction.
 
-### Create network_info object
+## Create network_info object
 create an object that describes the masternode/network that you are going to send the transcation to.
 ```typescript
 
@@ -155,12 +155,12 @@ let txInfo: I_TxInfo = {
 }
 ```
 
-### Create transaction
+## Create transaction
 ```javascript
 let tx = new Xian.TransactionBuilder(networkInfo, txInfo)
 ```
 
-### Send transaction
+## Send transaction
 ```typescript
 let senderSk = "69a8db3fb7196debc2711fad1fa1935918d09f5d8900d84c3288ea5237611c03"
 

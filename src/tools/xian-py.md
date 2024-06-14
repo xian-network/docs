@@ -16,7 +16,7 @@ pip install xian-py
 
 # Wallet
 
-### Create new wallet
+## Create new wallet
 ```python
 from xian_py.wallet import Wallet
 
@@ -24,7 +24,7 @@ from xian_py.wallet import Wallet
 wallet = Wallet()
 ```
 
-### Create wallet from existing private key
+## Create wallet from existing private key
 ```python
 from xian_py.wallet import Wallet
 
@@ -33,7 +33,7 @@ privkey = 'ed30796abc4ab47a97bfb37359f50a9c362c7b304a4b4ad1b3f5369ecb6f7fd8'
 wallet = Wallet(privkey)
 ```
 
-### Get private key and public key
+## Get private key and public key
 ```python
 from xian_py.wallet import Wallet
 
@@ -48,7 +48,7 @@ privkey = wallet.private_key
 print(f'private key: {privkey}')
 ```
 
-### Sign message with private key
+## Sign message with private key
 ```python
 from xian_py.wallet import Wallet
 
@@ -62,7 +62,7 @@ print(f'Signed message: {signed}')
 
 # Xian
 
-### Send XIAN tokens
+## Send XIAN tokens
 ```python
 from xian_py.wallet import Wallet
 from xian_py.xian import Xian
@@ -79,7 +79,7 @@ print(f'success: {send_xian["success"]}')
 print(f'tx_hash: {send_xian["tx_hash"]}')
 ```
 
-### Submit contract
+## Submit contract
 ```python
 from xian_py.wallet import Wallet
 from xian_py.xian import Xian
@@ -106,7 +106,7 @@ print(f'success: {submit["success"]}')
 print(f'tx_hash: {submit["tx_hash"]}')
 ```
 
-### Submit contract with constructor arguments
+## Submit contract with constructor arguments
 ```python
 from xian_py.wallet import Wallet
 from xian_py.xian import Xian
@@ -139,7 +139,7 @@ print(f'success: {submit["success"]}')
 print(f'tx_hash: {submit["tx_hash"]}')
 ```
 
-### Approve contract and retrieve approved amount
+## Approve contract and retrieve approved amount
 ```python
 from xian_py.wallet import Wallet
 from xian_py.xian import Xian
@@ -162,7 +162,7 @@ print(f'approved success: {approved["success"]}')
 print(f'approved tx_hash: {approved["tx_hash"]}')
 ```
 
-### Get XIAN token balance of an address
+## Get XIAN token balance of an address
 ```python
 from xian_py.wallet import Wallet
 from xian_py.xian import Xian
@@ -174,7 +174,7 @@ balance = xian.get_balance('b6504cf056e264a4c1932d5de6893d110db5459ab4f742eb415d
 print(f'balance: {balance}')
 ```
 
-### Get custom token balance for a contract
+## Get custom token balance for a contract
 
 Contracts can have token balances and in this example `con_token` is a token contract and we want to check the balance of that token in the contract `con_test_contract`
 
@@ -189,7 +189,7 @@ balance = xian.get_balance('con_test_contract', contract='con_token')
 print(f'balance: {balance}')
 ```
 
-### Retrieve transaction by hash
+## Retrieve transaction by hash
 ```python
 from xian_py.wallet import Wallet
 from xian_py.xian import Xian
@@ -202,7 +202,7 @@ tx = xian.get_tx('2C403B728E4AFFD656CAFAD38DD3E34C7CC8DA06464A7A5B1E8A426290F505
 print(f'transaction: {tx}')
 ```
 
-### Retrieve data from a contract
+## Retrieve data from a contract
 
 In this case we assume that there is a contract `con_testing` that has a variable called `test`
 
@@ -216,7 +216,7 @@ print(f'data: {tx}')
 
 # Transactions
 
-### Send a transaction - High level usage
+## Send a transaction - High level usage
 ```python
 from xian_py.wallet import Wallet
 from xian_py.xian import Xian

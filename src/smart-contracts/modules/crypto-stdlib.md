@@ -13,3 +13,8 @@ def verify_signature(vk: str, msg: str, signature: str):
     # Return the result of the verification
     return is_valid
 ```
+
+:::tip Additional methods for signing & verifying messages off-chain can be found in  :
+- [xian-js](/tools/xian-js#sign-a-message)
+- [xian-py](/tools/xian-py#sign-message-with-private-key)
+:::

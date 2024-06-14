@@ -5,8 +5,20 @@ description: Functions in Contracting.
 
 # Functions
 
-**Types of functions in Contracting**
+##  Types of functions in Contracting
 
+:::info Functions in Contracting are defined by the use of decorators 
+Decorators are special keywords situated above a function definition that tell the system how to handle the function.
+
+The decorators used in Contracting are:
+
+- `@export`
+    - A public function that can be called by any contract or person
+- `@construct`
+    - A function that is executed when the contract is submitted
+- No decorator
+    - A private function that can only be called by the smart contract itself
+::: 
 ## @export
 You have to define at least one `@export` decorated function in your smart contract. Otherwise, the smart contract has no functions for people to call.
 
