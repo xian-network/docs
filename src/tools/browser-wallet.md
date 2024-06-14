@@ -12,7 +12,7 @@ It provides tools to :
 It comes in two versions:
 
 - Web Based wallet
-    - Can be found @ [https://wallet.xian.network](https://wallet.xian.network)
+    - Can be found @ [https://wallet.xian.org](https://wallet.xian.org)
 - Browser Extension
     - Can be found @ [chrome web store](https://chromewebstore.google.com/detail/xian-wallet/kcimjjhplbcgkcnanijkolfillgfanlc)
 
