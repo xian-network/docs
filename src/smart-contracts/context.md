@@ -142,7 +142,7 @@ def try_to_bypass():
 ```
 :::
 :::info In the above example: 
-`2fadab39` calls the `try_to_bypass` function on `con_indirect.
+`2fadab39` calls the `try_to_bypass` function on `con_indirect`.
 
  The transaction will still fail because `ctx.signer` is used for gating instead of `ctx.caller`.
 :::
