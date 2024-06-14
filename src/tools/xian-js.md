@@ -7,9 +7,11 @@ description: xian-js is a JavaScript / Typescript library for interacting with t
 
 xian-js is a JavaScript / Typescript library for interacting with the Xian network.
 
-### Installation
+## Installation
 
-`npm install xian-js`
+```sh
+npm install xian-js
+```
 
 ### Wallet Functions
 

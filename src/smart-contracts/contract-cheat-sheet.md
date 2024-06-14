@@ -133,10 +133,3 @@ def who_am_i():
 def get_top_level_signer():
     return ctx.signer 
 ```
-
-
-## A note on builtins
-The following builtins are made available in the contracting standard library, and don't need to be explicitly imported.
-```
-random, crypto, decimal, hashlib, datetime, importlib, ctx, Hash, Variable, ForeignHash, ForeignVariable
-```

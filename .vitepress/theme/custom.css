@@ -1,13 +1,20 @@
 pre code {
-    font-size: 0.75rem !important;
-    font-family: monospace;
+    font-size: 0.78rem !important;
+    font-family: "Fira Mono", monospace;
+    font-weight: 500;
 }
 
 p, li {
-    font-size: 0.84rem;
+    font-size: 0.9rem;
 }
 
 .info, .tip, .warning {
     font-size: 0.8rem;
+}
+
+html, body {
+    font-family: "Fira Sans", sans-serif;
+    font-weight: 400;
+    line-height: 2.1;
 }
 

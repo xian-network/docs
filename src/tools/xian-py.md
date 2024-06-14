@@ -10,7 +10,7 @@ xian-py is a Python library for interacting with the Xian network.
 
 ## How to install
 
-```python
+```sh
 pip install xian-py
 ```
 

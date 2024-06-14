@@ -1,0 +1,2 @@
+- What is a validator ? 
+- How to get added to the quorum

@@ -28,7 +28,7 @@ Contracting is where Xian truly shines, offering a subset of Python tailored for
 * **Inline Documentation**: The Contracting language supports inline documentation, making it easier for developers to understand and maintain code. This feature is especially beneficial for collaborative projects and for ensuring the longevity and clarity of smart contracts.
 * **Modular Design**: Smart contracts written in Contracting can easily import and use other contracts as modules. This modular approach encourages code reuse and simplifies the development of complex applications on the Xian blockchain.
 
-### Emphasizing Accessibility
+## Emphasizing Accessibility
 
 Contracting's design philosophy emphasizes accessibility and security, making blockchain development more approachable without compromising on the robustness required for decentralized applications. By marrying Python's straightforward syntax with blockchain-specific enhancements, Contracting significantly lowers the entry barrier to blockchain development. This strategic choice not only accelerates innovation within the Xian ecosystem but also invites a diverse community of developers to contribute to the future of decentralized technology.
 
