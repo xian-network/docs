@@ -1,11 +1,12 @@
 ---
 title: XSC003 Token Contract
-description: This is the currency contract used on Xian, it features a cryptographic permit system for approvals as well as a streaming functionality to supoprt subscription type functionaly.
+description: This is the currency contract used on Xian, it features a cryptographic permit system for approvals as well as a streaming functionality to support subscription type functionality.
 ---
 
 # XSC003 Token Contract
 ## Overview
-Example Xian Smart Contract based Dice game with random functions and house edge. Range based dice with multiplier winnings based on range.
+Example Xian Token Smart Contract based Dice game with random functions and house edge. It features a cryptographic permit system for approvals as well as a streaming functionality to support subscription type functionality.
+
 This example demonstrates :
 - How to use the `crypto` module to verify signatures.
 - How to use the `hashlib` module to generate hashes.
