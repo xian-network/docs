@@ -1,9 +1,11 @@
 {
   "scripts": {
-    "dev": "vitepress dev",
-    "build": "vitepress build",
-    "build:prod": "vitepress build --outDir ./docs",
-    "preview": "vitepress preview --outDir ./docs"
+    "dev": "npx vitepress dev",
+    "build": "npx vitepress build",
+    "build:prod": "npx vitepress build --outDir ./docs",
+    "preview": "npx vitepress preview --outDir ./docs"
+  },
+  "dependencies": {
+    "vitepress": "^1.2.3"
   }
 }
-
