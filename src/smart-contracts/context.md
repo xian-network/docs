@@ -21,38 +21,47 @@ There are six types of `ctx` variables.
 | `ctx.entry`  | The entry function and contract as a tuple. | ctx.entry can help you distinguish a caller (either user or contract) and if the caller is a contract, it will inform you about the method from which that contract called your contract. |
 | `ctx.submission_name`  | The name of the submission contract, usually 'submission'. |                                                                                                                                       |
 
+
+:::tip A note on account & contract addresses
+- In Contracting, account addresses are 32-byte hexadecimal strings.
+- For these examples, accounts are represented as shortened versions, e.g.  `db21a73137672f075f9a8ee142a1aa4839a5deb28ef03a10f3e7e16c87db8f24` will be represented as `db21a731`.
+- Contract addresses, with the exception of system contracts always start with `con_`, e.g. `con_direct`.
+:::
+
 ## ctx.caller
 
-This is the most complex Context variable, but also the most useful. The ctx.caller is the same as the transaction signer (ctx.signer) at the beginning of execution. If the smart contract that is initially invoked calls a function on another smart contract, the ctx.caller then changes to the name of the smart contract calling that function, and so on and so forth until the end of the execution.
+This is the most complex Context variable, but also the most useful. The `ctx.caller` is the same as the transaction signer (`ctx.signer`) at the beginning of execution. If the smart contract that is initially invoked calls a function on another smart contract, the `ctx.caller` then changes to the name of the smart contract calling that function, and so on and so forth until the end of the execution.
 
-direct.py (Smart Contract)
+:::tip `con_direct` **smart-contract**
 ```python
 @export
 def who_am_i():
     return ctx.caller
 ```
 
-indirect.py (Smart Contract)
+`con_indirect` **smart-contract**
 ```python
-import direct
+import con_direct
 
 @export
 def call_direct():
-    return direct.who_am_i()
+    return con_direct.who_am_i()
 ```
+:::
 
-Assume the two contracts above exist in state space. If `stu` calls `who_am_i` on the `direct` contract, `stu` will be returned because `direct` does not call any functions in any other smart contracts.
+:::info Assume the two contracts above exist in state space.
+- If `2fadab39` calls `who_am_i` on the `con_direct` contract, `2fadab39` will be returned because `con_direct` does not call any functions in any other smart contracts.
+- However, if `2fadab39` calls `call_direct` on the `con_indirect` contract, `con_indirect` will be returned because `con_indirect` is now the caller of this function.
 
-However, if `stu` calls `call_direct` on the `indirect` contract, `indirect` will be returned because `indirect` is now the caller of this function.
-
+:::
 A good example of how to use this would be in a token contract.
 
-token.py (Smart Contract)
+:::tip `con_token` smart-contract
 ```python
 balances = Hash()
 @construct
 def seed():
-    balances['stu'] = 100
+    balances['2fadab39'] = 100
     balances['contract'] = 99
 
 @export
@@ -63,26 +72,29 @@ def send(amount, to):
     balances[to] += amount
 ```
 
-contract.py (Smart Contract)
+`con_contract` **smart-contract**
 ```python
-import token
+import con_token
 
 @export
 def withdraw(amount):
-    assert ctx.caller == 'stu'
+    assert ctx.caller == '2fadab39'
 
-    token.send(amount, ctx.caller)
+    con_token.send(amount, ctx.caller)
 ```
+:::
 
-In the above setup, `stu` has 100 tokens directly on the `token` contract. He can send them, because his account balance is looked up based on the `ctx.caller` when the send function is called.
-
-Similarly, `contract` also has 99 tokens. When `contract` imports `token` and calls `send`, `ctx.caller` is changed to `contract`, and its balance is looked up and mutated accordingly.
-
+:::info In the above example:
+ - `2fadab39` has 100 tokens directly on the `token` contract. 
+ - She can send them, because his account balance is looked up based on the `ctx.caller` when the send function is called.
+ - `con_contract` also has 99 tokens. 
+ - When `con_contract` imports `con_token` and calls `send`, `ctx.caller` is changed to `con_contract`, and its balance is looked up and changed accordingly.
+:::
 ### ctx.this
 
 This is a very simple reference to the name of the smart contract. Use cases are generally when you need to identify a smart contract itself when doing some sort of transaction, such as sending payment through an account managed by the smart contract but residing in another smart contract.
 
-registrar.py (Smart Contract)
+:::tip `con_registrar` **smart-contract**
 ```python
 names = Hash()
 
@@ -92,22 +104,27 @@ def register(name, value):
         names[name] = value
 ```
 
-controller.py (Smart Contract)
+`con_controller` **smart-contract**
 ```python
 import registrar
 
 @export
-def register(value):
-    registrar.register(ctx.this, value)
+def register():
+    registrar.register(ctx.this, "some_value")
 ```
+:::
+
+:::info In the above example:
+The arguments passed to `register` on `con_registrar` will be `con_controller` and `some_value`.
+:::
 
 ## ctx.signer
 
 This is the absolute signer of the transaction regardless of where the code is being executed in the call stack. This is good for creating blacklists of users from a particular contract.
 
-blacklist.py (Smart Contract)
+:::tip `con_blacklist` **smart-contract**
 ```python
-not_allowed = ['stu', 'tejas']
+not_allowed = ['2fadab39', 'db21a731']
 
 @export
 def some_func():
@@ -115,31 +132,40 @@ def some_func():
     return 'You are not blacklisted!'
 ```
 
-indirect.py (Smart Contract)
+`con_indirect` **smart-contract**
 ```python
-import blacklist
+import con_blacklist
 
 @export
 def try_to_bypass():
-    return blacklist.some_func()
+    return con_blacklist.some_func()
 ```
+:::
+:::info In the above example: 
+`2fadab39` calls the `try_to_bypass` function on `con_indirect.
 
-In the case that `stu` calls the `try_to_bypass` function on `indirect`, the transaction will still fail because `ctx.signer` is used for gating instead of `ctx.caller`.
-
-__NOTE__: Never use `ctx.signer` for account creation or identity. Only use it for security guarding and protection. `ctx.caller` should allow behavior based on the value. `ctx.signer` should block behavior based on the value.
-
+ The transaction will still fail because `ctx.signer` is used for gating instead of `ctx.caller`.
+:::
+:::warning NOTE
+Never use `ctx.signer` for account creation or identity. Only use it for security guarding and protection. `ctx.caller` should allow behavior based on the value. `ctx.signer` should block behavior based on the value.
+:::
 ### ctx.owner
 
 On submission, you can specify the owner of a smart contract. This means that only the owner can call the `@export` functions on it. This is for advanced contract pattern types where a single controller is desired for many 'sub-contracts'. Using `ctx.owner` inside of a smart contract can only be used to change the ownership of the contract itself. Be careful with this method!
 
-ownable.py (Smart Contract)
+:::tip `con_ownable` **smart-contract**
 ```python
 @export
 def change_ownership(new_owner):
     ctx.owner = new_owner
 ```
+:::
 
-The above contract is not callable unless the `ctx.caller` is the `ctx.owner`. Therefore, you do not need to do additional checks to make sure that this is the case.
+
+:::info In the above example:
+The contract is not callable unless the `ctx.caller` is the `ctx.owner`. 
+Therefore, you do not need to do additional checks to make sure that this is the case.
+:::
 
 ## ctx.entry
 
@@ -147,18 +173,24 @@ When someone calls a contract through another contract, you might want to know w
 
 `ctx.entry` returns a tuple containing the name of the contract and the function that was called.
 
-contract.py (Smart Contract)
+:::tip `con_contract` **smart-contract**
 ```python
 @export
 def function():
-    return ctx.entry  # Output when someone used other_contract: ("other_contract","call_contract")
+    # Output when someone used con_other_contract: ("con_other_contract","call_contract")
+    return ctx.entry  
 ```
 
-other_contract.py (Smart Contract)
+`con_other_contract` **smart-contract**
 ```python
-import contract
+import con_contract
 
 @export
 def call_contract():
-    contract.function()
+    con_contract.function()
 ```
+:::
+
+:::info In the above example : 
+The output of `con_contract.function()` will be `("con_other_contract", "call_contract")`.
+

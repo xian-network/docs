@@ -18,8 +18,8 @@ export default defineConfig({
         text: 'Smart Contracts',
         collapsed: false,
         items: [
-          { text: 'Contracting Library', link: '/smart-contracts/' },
-          { text: 'Contracting Cheat Sheet', link: '/smart-contracts/contract-cheat-sheet' },
+          { text: 'Contracting Engine', link: '/smart-contracts/' },
+          { text: 'Cheat Sheet', link: '/smart-contracts/contract-cheat-sheet' },
           { text: 'Context', link: '/smart-contracts/context' },
           { text: 'Functions', link: '/smart-contracts/functions' },
           {
@@ -74,5 +74,4 @@ export default defineConfig({
   cleanUrls: true,
   srcDir: './src',
   base: '/',
-
 })

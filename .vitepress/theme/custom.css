@@ -1,0 +1,13 @@
+pre code {
+    font-size: 0.75rem !important;
+    font-family: monospace;
+}
+
+p {
+    font-size: 0.84rem;
+}
+
+.info, .tip, .warning {
+    font-size: 0.8rem;
+}
+

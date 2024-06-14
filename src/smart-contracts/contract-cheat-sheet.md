@@ -1,9 +1,9 @@
 ---
-title: Contracting Cheat Sheet
+title: Cheat Sheet
 description: Here is a reference contract showcasing many of the syntax and features of Contracting.
 ---
 
-# Contracting Cheat Sheet
+# Cheat Sheet
 
 ## Reference Contract
 
@@ -24,9 +24,14 @@ submission_block_hash = Variable()
 random_number = Variable()
 
 # ForeignHash is a way to get a read-only view of a hash from another contract
-currency_balances = ForeignHash(foreign_contract='currency', foreign_name='balances') 
-# ForeignVariable is a way to get a read-only view of a variable from another contract
-foundation_owner = ForeignVariable(foreign_contract='foundation', foreign_name='owner') 
+currency_balances = ForeignHash(
+    foreign_contract='currency', foreign_name='balances'
+) 
+# ForeignVariable is a way to get a read-only view of a variable from another 
+# contract
+foundation_owner = ForeignVariable(
+    foreign_contract='foundation', foreign_name='owner'
+) 
 
 # The construct decorator is used to define initialization logic for the contract
 @construct 
@@ -43,11 +48,10 @@ def seed():
 
 # This function is private and cannot be called from outside the contract
 def private_function(): 
-
-    
     return "This is a private function"
 
-# The export decorator is used to define functions that can be called from outside the contract
+# The export decorator is used to define functions that can be called from 
+# outside the contract
 @export 
 def call_private_function():
     # Call the private function
@@ -81,13 +85,11 @@ def get_storage_pair(key: str):
 # Set a nested key-value pair in the storage
 @export
 def set_nested_storage_pair(key: str, nested_key: str, value: int):
-    
     storage[key, nested_key] = value
 
 @export
 # Get the value of a nested key in the storage
 def get_nested_storage_pair(key: str, nested_key: str):
-    
     return storage[key, nested_key]
 
 # Import another contract dynamically
@@ -96,9 +98,11 @@ def interact_with_other_contract(contract: str, args: dict):
     c = importlib.import_module(contract) 
 
     forced_interface = [
-        # Func is a way to enforce the existence of a function with specific arguments
+        # Func is a way to enforce the existence of a function with specific 
+        # arguments
         importlib.Func('do_something', args=('amount', 'to')), 
-        # Var is a way to enforce the existence of a variable with a specific type
+        # Var is a way to enforce the existence of a variable with a specific 
+        # type
         importlib.Var('balances', Hash) 
     ] 
 
@@ -111,7 +115,6 @@ def interact_with_other_contract(contract: str, args: dict):
 # Check if the submission time is older than a specific date
 @export 
 def is_older_than_date(date: datetime.datetime):
-    
     return submission_time.get() < date
 
 @export
@@ -123,8 +126,9 @@ def get_contract_name():
 def who_am_i():
     return ctx.caller 
 
-# First signer in the call chain (the original signer). This is the account that initiated the transaction even if the transaction was 
-# forwarded by another contract
+# First signer in the call chain (the original signer). This is the account that 
+# initiated the transaction even if the transaction was forwarded by another 
+# contract
 @export
 def get_top_level_signer():
     return ctx.signer 
