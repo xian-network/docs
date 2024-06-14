@@ -43,6 +43,8 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Install dependencies
         run: npm ci # or pnpm install / yarn install / bun install
+      - name: Create docs directory
+        run: mkdir -p docs
       - name: Build with VitePress
         run: npm run build:prod
       - name: Upload artifact
