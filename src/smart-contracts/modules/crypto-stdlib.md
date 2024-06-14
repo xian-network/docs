@@ -4,6 +4,8 @@ In this example, the `verify_signature` function is an exported function in a Xi
 
 This module uses the `PyNaCl` library under the hood, employing the `Ed25519` signature scheme.
 
+## Usage
+
 ```python
 @export
 def verify_signature(vk: str, msg: str, signature: str):

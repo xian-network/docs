@@ -62,7 +62,8 @@ export default defineConfig({
                   { text: 'Uber Dice', link: '/examples/uber-dice-example' },
                   { text: 'Token XSC003', link: '/examples/currency' },
                 ]
-              }
+              },
+              { text: "Submitting a Contract", link: "/smart-contracts/submitting-a-contract" }
             ]
           },
           {

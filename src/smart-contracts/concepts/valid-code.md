@@ -1,7 +1,7 @@
 
 # Valid Code
 
-### No Classes Allowed!
+## No Classes Allowed!
 Contracting maintains a strict 'no classes' model. This forces you as the developer to create more procedural code that is explicit and completely self-contained. Contracts must be easy to read and understand for validity. Instead of thinking of your code in classes, think of each contract as a 'module' that exposes certain functions to it's users.
 
 All `class` keywords will fail your contract on submission. Even if you try to use classes for object oriented code, you will have to find another way to express your structures.
@@ -28,7 +28,7 @@ cars['balthasar'] = {
 Read more about storage in the Storage section.
 
 
-### Restricted Builtins
+## Restricted Builtins
 
 Certain builtins such as `exec`, `eval`, and `compile` are obviously dangerous. We do not want to allow any arbitrary execution of code.
 
@@ -108,7 +108,7 @@ Here is a list of most Python3.11 builtin functions versus the ones we allow in 
 | `zip()`         | ✓          | ✓           |                                                                                                         |
 
 
-### Illegal AST Nodes
+## Illegal AST Nodes
 
 Similarly, some of the AST (abstract syntax tree) nodes that make up deeper levels of the Python syntax are not allowed. Mainly, the nodes around the async/await features are restricted.
 
@@ -131,7 +131,7 @@ Similarly, some of the AST (abstract syntax tree) nodes that make up deeper leve
 | [ast.Yield](https://greentreesnakes.readthedocs.io/en/latest/nodes.html#Yield) | Generator related code is not compatible with Contracting. |
 | [ast.YieldFrom](https://greentreesnakes.readthedocs.io/en/latest/nodes.html#YieldFrom) | Generator related code is not compatible with Contracting. |
 
-### Violations
+## Violations
 
 The linter will check for several violations that will fail your smart contract automatically. Here is a list of the current violations and examples of code that will cause them.
 
