@@ -73,7 +73,7 @@ export default defineConfig({
               { text: 'xian-js', link: '/tools/xian-js' },
               { text: 'xian-py', link: '/tools/xian-py' },
               { text: 'Browser Wallet', link: '/tools/browser-wallet' },
-              { text: 'Wallet Utils', link: '/tools/xian-wallet-utils' },
+              { text: 'dApp Wallet Utils', link: '/tools/xian-wallet-utils' },
               { text: 'Contract Dev Environment', link: '/tools/contract-dev-environment' },
             ]
           },
