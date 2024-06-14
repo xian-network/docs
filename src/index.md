@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "Xian Network"
   text: "Documentation"
-  tagline: Build the next big thing on a robust, fast & secure Python blockchain platform.
+  tagline: Build the next big thing on a robust, fast & secure Python blockchain.
   image:
     src: /xian-logo-shadow.png
     alt: Xian
