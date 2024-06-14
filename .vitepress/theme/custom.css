@@ -3,7 +3,7 @@ pre code {
     font-family: monospace;
 }
 
-p {
+p, li {
     font-size: 0.84rem;
 }
 
