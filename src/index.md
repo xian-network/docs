@@ -18,13 +18,13 @@ features:
   - icon: 
       src: ./python-logo.png
       alt: Python
-    title: Pythonic Smart Contracts
-    details: Write your decentralised applications in ultra-modern Python. Use all the power of Python to build your smart contracts.
-  - title: Generate revenue from your work
+    title: Smart Contracts in Python
+    details: Write your smart contracts in native Python. No transpiler necessary.
+  - title: Generate revenue
     icon:
       src: ./builder.png
       alt: Builder
-    details: Builders earn a share of transaction fees every time contracts they create are used.
+    details: Builders earn a share of transaction fees every time contracts they wrote are used.
   - title: Run a Xian node
     icon:
       src: ./currency.png
