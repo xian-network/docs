@@ -5,7 +5,7 @@ description: Retrieve data through REST endpoints
 
 # REST API
 
-## 1. Transactions
+## Transactions
 ### Broadcast Transaction
 Broadcasts a signed transaction to the network.
 
@@ -55,7 +55,7 @@ Retrieves a transaction by its hash.
     - `proof`: The transaction proof
     - `proof_height`: The proof height
 
-## 2. Wallets
+## Wallets
 ### Get Next Nonce
 Retrieves the next nonce for a given address.
 
@@ -72,7 +72,7 @@ Retrieves the next nonce for a given address.
     - `response`: The response data
       - `value`: Hex-encoded nonce
 
-## 3. Get Values from State
+## State
 ### Query State
 Queries the data at a given path in the state store
 
@@ -154,7 +154,7 @@ Retrieves the methods for a given contract
     - `response`: The response data
       - `value`: Hex-encoded JSON string with method data
 
-## 4. Services
+## Services
 #### Estimate Stamps
 Estimates the number of stamps required for a given transaction
 
