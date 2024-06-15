@@ -5,7 +5,7 @@ description: Subscribe to events with Websockets
 
 # Websocket
 
-## Subscribe to Events
+## Available Events
 
 CometBFT offers the following events to which you can subscribe via Websockets
 ```
@@ -16,6 +16,8 @@ EventNewEvidence         = "NewEvidence"
 EventTx                  = "Tx"
 EventValidatorSetUpdates = "ValidatorSetUpdates"
 ```
+
+## Example
 
 The following example shows how to subsribe to them
 
