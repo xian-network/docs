@@ -27,3 +27,15 @@ A key feature of Xian's governance model is the DAO, a smart contract pre-funded
 The governance model of Xian operates on the principles of inclusivity, transparency, and security. Validators, as key stakeholders in the network, are empowered to shape the future of Xian through their participation in critical decision-making processes. This model encourages a collaborative approach to governance, where the collective wisdom of the validator community guides the strategic direction of the Xian blockchain.
 
 The DAO further enhances this governance model by providing a mechanism for funding initiatives that are in the best interest of the Xian community. By allowing validators to vote on the allocation of these funds, Xian ensures that its development is continuously aligned with the evolving needs and priorities of its users.
+
+## **Additional Governance Aspects**
+
+The governance model includes provisions for adjusting several critical parameters and functions to ensure the network's optimal performance and alignment with community interests. These include:
+
+* **Reward Distribution**: Changes to how rewards are distributed among contract developers, validators, and the foundation can be proposed and voted on.
+* **Registration Fees**: Adjustments to the fees required for new validators to join the network.
+* **Transaction Fees**: Modifications to the cost of stamps (transaction fees) on the network.
+* **DAO Payouts**: Decisions on payouts from the DAO treasury to fund specific projects or initiatives.
+* **Validator Changes**: The process for adding or removing validators based on the community's trust and assessment of their performance.
+
+By empowering validators to propose and vote on these aspects, the Xian governance model remains dynamic and responsive to the needs of the network and its participants.
