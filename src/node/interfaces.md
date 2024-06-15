@@ -3,19 +3,21 @@ title: Interfaces
 description: CometBFT offers the following events to which you can subscribe
 ---
 
-# REST API
+# Interfaces
 
-## 1. Transactions
-### Broadcast Transaction
+## REST API
+
+### 1. Transactions
+#### Broadcast Transaction
 Broadcasts a signed transaction to the network.
 
-#### Request
+##### Request
 - Method: GET
 - URL: `/broadcast_tx_sync`
 - Query Parameters:
   - `tx`: The transaction to broadcast (hex-encoded JSON string)
 
-#### Response
+##### Response
 - Content-Type: application/json
 - Body: JSON object with the following fields:
   - `jsonrpc`: The JSON-RPC version
@@ -27,17 +29,17 @@ Broadcasts a signed transaction to the network.
     - `log`: The transaction log
     - `codespace`: The transaction codespace
 
-### Get Transaction
+#### Get Transaction
 Retrieves a transaction by its hash.
 
-#### Request
+##### Request
 - Method: GET
 - URL: `/tx`
 - Query Parameters:
   - `hash`: The transaction hash (prepend with `0x`)
   - `prove`: Whether to include a proof of the transaction (default: false)
 
-#### Response
+##### Response
 - Content-Type: application/json
 - Body: JSON object with the following fields:
   - `jsonrpc`: The JSON-RPC version
@@ -55,15 +57,15 @@ Retrieves a transaction by its hash.
     - `proof`: The transaction proof
     - `proof_height`: The proof height
 
-## 2. Wallets
-### Get Next Nonce
+### 2. Wallets
+#### Get Next Nonce
 Retrieves the next nonce for a given address.
 
-#### Request
+##### Request
 - Method: GET
 - URL: `/abci_query?path="/get_next_nonce/<address>"`
 
-#### Response
+##### Response
 - Content-Type: application/json
 - Body: JSON object with the following fields:
   - `jsonrpc`: The JSON-RPC version
@@ -72,16 +74,16 @@ Retrieves the next nonce for a given address.
     - `response`: The response data
       - `value`: Hex-encoded nonce
 
-## 3. Get Values from State
-### Query State
+### 3. Get Values from State
+#### Query State
 Queries the data at a given path in the state store
 
-#### Request
+##### Request
 - Method: GET
 - URL: `/abci_query?path="/get/<contract>.<hash>:<key>"`
 - Alternate URL: `/abci_query?path="/get/<contract>.<variable>"`
 
-#### Response
+##### Response
 - Content-Type: application/json
 - Body: JSON object with the following fields:
   - `jsonrpc`: The JSON-RPC version
@@ -90,14 +92,14 @@ Queries the data at a given path in the state store
     - `response`: The response data
       - `value`: Hex-encoded value
 
-### Keys in a Hash
+#### Keys in a Hash
 Retrieves the keys in a given hash
 
-#### Request
+##### Request
 - Method: GET
 - URL: `/abci_query?path="/keys/<contract>.<hash>"`
 
-#### Response
+##### Response
 - Content-Type: application/json
 - Body: JSON object with the following fields:
   - `jsonrpc`: The JSON-RPC version
@@ -106,14 +108,14 @@ Retrieves the keys in a given hash
     - `response`: The response data
       - `value`: Hex-encoded JSON string with keys
 
-### Deployed Contracts
+#### Deployed Contracts
 Retrieves the deployed contracts
 
-#### Request
+##### Request
 - Method: GET
 - URL: `/abci_query?path="/contracts"`
 
-#### Response
+##### Response
 - Content-Type: application/json
 - Body: JSON object with the following fields:
   - `jsonrpc`: The JSON-RPC version
@@ -122,14 +124,14 @@ Retrieves the deployed contracts
     - `response`: The response data
       - `value`: Hex-encoded JSON string with list of contracts
 
-### Contract Code
+#### Contract Code
 Retrieves the code for a given contract
 
-#### Request
+##### Request
 - Method: GET
 - URL: `/abci_query?path="/contract/<contract>"`
 
-#### Response
+##### Response
 - Content-Type: application/json
 - Body: JSON object with the following fields:
   - `jsonrpc`: The JSON-RPC version
@@ -138,14 +140,14 @@ Retrieves the code for a given contract
     - `response`: The response data
       - `value`: Hex-encoded code
 
-### Contract Methods
+#### Contract Methods
 Retrieves the methods for a given contract
 
-#### Request
+##### Request
 - Method: GET
 - URL: `/abci_query?path="/contract_methods/<contract>"`
 
-#### Response
+##### Response
 - Content-Type: application/json
 - Body: JSON object with the following fields:
   - `jsonrpc`: The JSON-RPC version
@@ -154,15 +156,15 @@ Retrieves the methods for a given contract
     - `response`: The response data
       - `value`: Hex-encoded JSON string with method data
 
-## 4. Services
-### Estimate Stamps
+### 4. Services
+#### Estimate Stamps
 Estimates the number of stamps required for a given transaction
 
-#### Request
+##### Request
 - Method: GET
 - URL: `/abci_query?path="/estimate_stamps/<hex-encoded-signed-transaction>"`
 
-#### Response
+##### Response
 - Content-Type: application/json
 - Body: JSON object with the following fields:
   - `jsonrpc`: The JSON-RPC version
@@ -171,14 +173,14 @@ Estimates the number of stamps required for a given transaction
     - `response`: The response data
       - `value`: Hex-encoded JSON string with stamp estimate and tx result
 
-### Lint Code
+#### Lint Code
 Lints the code for a given contract
 
-#### Request
+##### Request
 - Method: GET
 - URL: `/abci_query?path="/lint/<base64-encoded-urlsafe-code>"`
 
-#### Response
+##### Response
 - Content-Type: application/json
 - Body: JSON object with the following fields:
   - `jsonrpc`: The JSON-RPC version
@@ -187,9 +189,9 @@ Lints the code for a given contract
     - `response`: The response data
       - `value`: Hex-encoded JSON string with lint result
 
+## Websocket
 
-
-# Subscribe to Events
+### Subscribe to Events
 
 CometBFT offers the following events to which you can subscribe via Websockets
 ```
