@@ -92,7 +92,7 @@ export default defineConfig({
                     { text: 'Governance Model', link: '/node/governance-model' },
                     {
                         text: 'Interfaces',
-                        collapsed: false,
+                        collapsed: true,
                         items: [
                             { text: 'REST', link: '/node/interfaces/rest' },
                             { text: 'Websockets', link: '/node/interfaces/websockets' },
