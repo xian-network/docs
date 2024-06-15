@@ -15,11 +15,11 @@ with open('./contracts/con_uberdice.py', 'r') as file:
 # Give your contract a name to be submitted as, must start with `con_`
 contract_name = 'con_my_cool_contract'
 
-wallet = Wallet(
-    '<wallet_private_key>')
+wallet = Wallet('<wallet_private_key>')
 xian = Xian('https://testnet.xian.org', wallet=wallet)
 
-# Constructor arguments // do not include in `submit_contract` if the seed() function has no arguments in your contract.
+# Constructor arguments // do not include in `submit_contract`
+# if the seed() function has no arguments in your contract.
 arguments = {
     'some_arg': '12345'
 }
