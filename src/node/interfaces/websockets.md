@@ -1,3 +1,8 @@
+---
+title: Websockets
+description: Subscribe to events with Websockets
+---
+
 # Websocket
 
 ## Subscribe to Events
