@@ -1,6 +1,6 @@
 ---
 title: REST
-description: Retrieve data through REST endpoints.
+description: Retrieve data through REST endpoints
 ---
 
 # REST API
