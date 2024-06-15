@@ -121,6 +121,20 @@ def is_older_than_date(date: datetime.datetime):
 def get_contract_name():
     return ctx.this
 
+@export
+def am_i_a_masternode():
+    nodes = ForeignVariable(
+        foreign_contract='masternodes', foreign_name='nodes'
+    ) # nodes is a list
+    return ctx.caller in nodes
+
+@export
+def xian_balance():
+    xian_balances = ForeignHash(
+        foreign_contract='currency', foreign_name='balances'
+    )
+    return xian_balances[ctx.caller]
+
 # The actual caller that called this function. Could be a contract or an account
 @export
 def who_am_i():
