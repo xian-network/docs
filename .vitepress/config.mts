@@ -23,7 +23,7 @@ export default defineConfig({
 
             },
             {
-                text: "Dapp Development",
+                text: "Development",
                 collapsed: false,
                 items: [
 
