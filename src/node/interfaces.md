@@ -1,11 +1,14 @@
 ---
-title: Events
+title: Interfaces
 description: CometBFT offers the following events to which you can subscribe
 ---
 
+# REST API
+Describe `query` endpoint
+
 # Subscribe to Events
 
-CometBFT offers the following events to which you can subscribe
+CometBFT offers the following events to which you can subscribe via Websockets
 ```
 EventNewBlock            = "NewBlock"
 EventNewBlockHeader      = "NewBlockHeader"
