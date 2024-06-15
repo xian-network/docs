@@ -20,7 +20,6 @@ Contracting simplifies the process of creating, testing, and deploying smart con
 ### New to Coding ?
 If you're new to writing code with Python, and you want to learn the basics before going further, here are some great guides to get you started : 
 
-Official documentation
 1. [Official documentation](https://docs.python.org/3.11/)
 2. [Python Cheat Sheet](https://www.pythoncheatsheet.org)
 3. [Sentdex YouTube videos](https://www.youtube.com/user/sentdex)
