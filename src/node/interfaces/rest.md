@@ -1,6 +1,6 @@
 ---
 title: REST
-description: CometBFT offers the following events to which you can subscribe
+description: Retrieve data through REST endpoints.
 ---
 
 # REST API
