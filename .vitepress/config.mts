@@ -90,7 +90,14 @@ export default defineConfig({
                     { text: 'Technology Stack', link: '/node/technology-stack' },
                     { text: 'Architecture', link: '/node/architecture' },
                     { text: 'Governance Model', link: '/node/governance-model' },
-                    { text: 'Interfaces', link: '/node/interfaces' },
+                    {
+                        text: 'Interfaces',
+                        collapsed: false,
+                        items: [
+                            { text: 'REST', link: '/node/interfaces/rest' },
+                            { text: 'Websockets', link: '/node/interfaces/websockets' },
+                        ]
+                    },
                     // {
                     //   text: "Running a Node", collapsed: true, items: [
                     //     { text: "Getting Started", link: "/node/running-a-node/getting-started" },
