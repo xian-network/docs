@@ -118,13 +118,8 @@ export default defineConfig({
             { icon: 'github', link: 'https://github.com/xian-network' }
         ],
         search: {
-            provider: 'algolia',
-            options: {
-              appId: 'YSOCFIF6ME',
-              apiKey: 'b7b5444d49b06c2b4f0351f484499893',
-              indexName: 'xian'
-            }
-          }
+            provider: 'local'
+        }
     },
     cleanUrls: true,
     srcDir: './src',
