@@ -24,7 +24,7 @@ submission_block_hash = Variable()
 random_number = Variable()
 
 # ForeignHash is a way to get a read-only view of a hash from another contract
-currency_balances = ForeignHash(
+xian_balances = ForeignHash(
     foreign_contract='currency', foreign_name='balances'
 ) 
 # ForeignVariable is a way to get a read-only view of a variable from another 
@@ -130,10 +130,11 @@ def am_i_a_masternode():
 
 @export
 def xian_balance():
-    xian_balances = ForeignHash(
-        foreign_contract='currency', foreign_name='balances'
-    )
     return xian_balances[ctx.caller]
+
+@export
+def get_foundation_owner():
+    return foundation_owner.get()
 
 # The actual caller that called this function. Could be a contract or an account
 @export
