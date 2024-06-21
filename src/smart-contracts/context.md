@@ -56,7 +56,23 @@ def call_direct():
 :::
 
 ![ctx.caller](/context-ctx.caller.svg)
-
+```txt
+                   con_direct     
+    ctx.signer    +----------------+       
+                  |   calling      |        
+    2fadab39 ---> |   who_am_I( )  |        
+                  |                |        
+                  +----------------+        
+                  ctx.caller = 2fadab39    
+ 
+                  con_indirect           con_direct                        
+    ctx.signer    +---------------+      +----------------+                     
+                  |               |      |   calling      |        
+    2fadab39 ---> |               | ---> |   who_am_I( )  |        
+                  |               |      |                |        
+                  +---------------+      +----------------+        
+                                         ctx.caller = con_indirect
+```
 A good example of how to use this would be in a token contract.
 
 :::tip `con_token` smart-contract
