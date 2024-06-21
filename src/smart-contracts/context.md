@@ -55,7 +55,6 @@ def call_direct():
 
 :::
 
-![ctx.caller](/context-ctx.caller.svg)
 ```txt
                    con_direct     
     ctx.signer    +----------------+       
