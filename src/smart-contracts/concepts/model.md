@@ -52,7 +52,34 @@ Metering is set to false so that the executor does not use any stamps when execu
 
 ### Step 1: Submit Transaction
 
-<center><img src='../img/import.png' width=75%></center>
+```txt
+                                                    +----------------+
+                                                    | Error returned |<------+
+                                                    | to Executor    |       |
+                                                    +----------------+       |
+                                                        Module Loader        |
+                                                    +----------------+       |
+                                                    |     - - -      |       |
+                                    Does this       |   -       -    |       |
+  |-------------\                   smart contract  |   | - - - |    |       |
+  | transaction  -\   +----------+  exist?          |   | state |-------No---+
+  | submitted      -  | Executor |----------------->|    - - - -     |
+  | to Executor  -/   +----------+                  |       |        |
+  |-------------/                                   |      Yes       |
+                                                    |       |        |
+                                                    |       v        |
+                                                    |   +-----+      |
+                                                    |   |    |_\     |
+                                                    |   |       |    |
+                                                    |   |       |    |
+                                                    |   |       |    |
+                                                    |   +-------+    |
+                                                    |       |        |
+                         +----------------------+   +-------|--------+
+                         |  Smart contract      |           |  
+                         | returned to Executor |-----------+              
+                         +----------------------+
+```
 
 Executor retrieves the module for the smart contract if it exists.
 
