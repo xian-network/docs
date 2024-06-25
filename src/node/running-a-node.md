@@ -1,37 +1,42 @@
-# Getting Started
+# Operating Instructions
 
-## Overview
+## Types of Nodes
 
 Xian Network has **3 types of nodes**
 
-### Validator Nodes
+::: tip Validator Nodes
 
 * Validators are responsible for creating & validating blocks.
 * A block is considered valid when **75%** of validators vote for a block.
+:::
 
-### Full Nodes
+::: tip Full Nodes
 
 * Full nodes keep a copy of the entire history & state of the blockchain.
 * They are a key component to keeping the network healthy.
 
-### Blockchain Data Service Nodes
+:::
+
+::: tip Blockchain Data Service Nodes
 
 Blockchain Data Service (`BDS`) nodes improve developer experience by providing : 
 - Rich data & querying via REST & Websocket interfaces
 - Stamp estimation, allowing a dAPP to know how many `stamps` a transaction will cost before submitting it to the network.
-- A Validator __cannot__ also be a BDS
+- A Validator __cannot__ also be a `BDS`
+- Xian provides access to service nodes free of charge, although this service may be limited in the future, depending on use.
+:::
 
 ## Recommended Server Specs
-
-*These specs are subject to change depending on network growth & use*
+::: tip Server Specs
+*These specs are subject to change depending on network growth & use.*
 
 | Node Type            | RAM  | SSD   | CPU      |
 |----------------------|------|-------|----------|
 | Validator / Full Node| 8GB  | 256GB | 4 Cores  |
 | BDS                  | 8GB  | 512GB | 4 Cores  |
-
 - **OS** : Ubuntu 24.02
 - **Architecture** : Intel / AMD x86
+:::
 
 ## Generate a wallet.
 

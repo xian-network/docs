@@ -95,10 +95,7 @@ export default defineConfig({
                         ]
                     },
                     {
-                      text: "Running a Node", collapsed: true, items: [
-                        { text: "Getting Started", link: "/node/running-a-node/getting-started" },
-                        { text: "Becoming a Validator", link: "/node/running-a-node/becoming-a-validator" },
-                      ]
+                      text: "Running a Node", link: "/node/running-a-node"
                     }
                 ]
             },
