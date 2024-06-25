@@ -77,6 +77,38 @@ Metering is set to false so that the executor does not use any stamps when execu
                          | returned to Executor |-----------+              
                          +----------------------+
 ```
+Executor retrieves the module for the smart contract if it exists.
+
+### Step 2: Execution
+```txt
+                                            +------------------------+
+         +----------------------------------|  Error returned to     |<--------+ 
+         |                                  |       Executor         |<-----+  |
+         |                                  +------------------------+      |  |
+         |                                         Python VM                |  |
+         |                                  +--------------------------+    |  |
+         |                                  |  +--------------------+  |    |  | 
+         |                                  |  | Does the function  |----No-+  |
+         |                                  |  |      exist?        |  |       |
+         |                                  |  +--------------------+  |       |
+         |                                  |            |             |       |
+         |         Execute this function    |            v             |       |
+         v         on this smart contract   |  +--------------------+  |       |
+    +----------+   with these arguments     |  |   Are there enough |----No----+
+    | Executor |--------------------------->|  |       stamps       |  |
+    +----------+                            |  +--------------------+  |
+         ^                                  |            |             |
+         |                                  |            v             |
+         |                                  |   +--------------------+ |                    
+         |                                  |   |      Execute       | |                     
+         |                                  |   +--------------------+ |
+         |                                  +--------------------------+
+         |                                                |
+         |                                                |
+         |    +------------------------+                  |
+         +----| Results of Execution   |<-----------------+
+              +------------------------+
+```
 
 The executor attempts to execute a function on the smart contract. If it fails due to Python errors or invalid inputs, the executor will get a response. Otherwise, the function is called and the results of the execution are returned to the executor and which can be passed to the operator.
 
