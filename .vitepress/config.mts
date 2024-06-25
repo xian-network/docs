@@ -94,13 +94,12 @@ export default defineConfig({
                             { text: 'Websockets', link: '/node/interfaces/websockets' },
                         ]
                     },
-                    // {
-                    //   text: "Running a Node", collapsed: true, items: [
-                    //     { text: "Getting Started", link: "/node/running-a-node/getting-started" },
-                    //     { text: "Service Node", link: "/node/running-a-node/service-node" },
-                    //     { text: "Becoming a Validator", link: "/node/running-a-node/becoming-a-validator" },
-                    //   ]
-                    // }
+                    {
+                      text: "Running a Node", collapsed: true, items: [
+                        { text: "Getting Started", link: "/node/running-a-node/getting-started" },
+                        { text: "Becoming a Validator", link: "/node/running-a-node/becoming-a-validator" },
+                      ]
+                    }
                 ]
             },
             {
