@@ -3,7 +3,7 @@
 layout: home
 
 hero:
-  name: "Xian Tech"
+  name: "Xian Network"
   text: "Documentation"
   tagline: Build the next big thing on a robust, fast & secure Python blockchain.
   image:
