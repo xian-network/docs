@@ -19,6 +19,19 @@ Xian Network has **3 types of nodes**
 Blockchain Data Service (`BDS`) nodes improve developer experience by providing : 
 - Rich data & querying via REST & Websocket interfaces
 - Stamp estimation, allowing a dAPP to know how many `stamps` a transaction will cost before submitting it to the network.
+- A Validator __cannot__ also be a BDS
+
+## Recommended Server Specs
+
+*These specs are subject to change depending on network growth & use*
+
+| Node Type            | RAM  | SSD   | CPU      |
+|----------------------|------|-------|----------|
+| Validator / Full Node| 8GB  | 256GB | 4 Cores  |
+| BDS                  | 8GB  | 512GB | 4 Cores  |
+
+- **OS** : Ubuntu 24.02
+- **Architecture** : Intel / AMD x86
 
 ## Generate a wallet.
 
