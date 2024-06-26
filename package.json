@@ -2,8 +2,7 @@
   "scripts": {
     "dev": "npx vitepress dev",
     "build": "npx vitepress build",
-    "build:prod": "npx vitepress build --outDir ./docs",
-    "preview": "npx vitepress preview --outDir ./docs"
+    "preview": "npx vitepress preview"
   },
   "dependencies": {
     "vitepress": "^1.2.3"
