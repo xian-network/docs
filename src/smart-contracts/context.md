@@ -54,6 +54,24 @@ def call_direct():
 - However, if `2fadab39` calls `call_direct` on the `con_indirect` contract, `con_indirect` will be returned because `con_indirect` is now the caller of this function.
 
 :::
+
+```txt
+                   con_direct     
+    ctx.signer    +----------------+       
+                  |   calling      |        
+    2fadab39 ---> |   who_am_I( )  |        
+                  |                |        
+                  +----------------+        
+                  ctx.caller = 2fadab39    
+ 
+                  con_indirect           con_direct                        
+    ctx.signer    +---------------+      +----------------+                     
+                  |               |      |   calling      |        
+    2fadab39 ---> |               | ---> |   who_am_I( )  |        
+                  |               |      |                |        
+                  +---------------+      +----------------+        
+                                         ctx.caller = con_indirect
+```
 A good example of how to use this would be in a token contract.
 
 :::tip `con_token` smart-contract
