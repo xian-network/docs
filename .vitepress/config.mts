@@ -67,6 +67,10 @@ export default defineConfig({
                         ]
                     },
                     {
+                        text: 'dApp Starters',
+                        link: '/dapp-starters/'
+                    },
+                    {
                         text: 'Tools',
                         collapsed: true,
                         items: [

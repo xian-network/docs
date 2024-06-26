@@ -8,7 +8,7 @@ The `XianWalletUtils` JavaScript utility provides a simple interface for interac
 
 ## Installation
 
-To use `XianWalletUtils`, simply include the `dapp.js` file in your project.
+To use `XianWalletUtils`, simply include the `dapp.js` or `dapp-esm.mjs` file in your project.
 Get dapp.js from the [github repo](https://github.com/xian-network/dapp-utils)
 
 ```html

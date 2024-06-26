@@ -13,7 +13,9 @@ hero:
     - theme: brand
       text: Explore the docs
       link: /introduction/
-
+    - theme: alt
+      text: Start Building
+      link: /smart-contracts/
 features:
   - icon: 
       src: ./python-logo.png

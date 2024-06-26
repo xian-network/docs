@@ -7,6 +7,9 @@ description: xian-py is a Python library for interacting with the Xian network.
 
 xian-py is a Python library for interacting with the Xian network.
 
+:::tip Git repository
+can be found [here](https://github.com/xian-network/xian-py)
+:::
 
 ## How to install
 
