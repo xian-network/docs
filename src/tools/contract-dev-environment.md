@@ -22,10 +22,10 @@ description: A standardised environment for developing and testing smart contrac
    ```
 ### Clone & install contract-dev-environment
    ```sh
- `git clone https://github.com/xian-network/contract-dev-environment.git`
- `cd contract-dev-environment`
- `make build`
- ```
+   git clone https://github.com/xian-network/contract-dev-environment.git
+   cd contract-dev-environment
+   make build
+   ```
 
 :::info Usage
 1. Run `make test-shell` from cli
