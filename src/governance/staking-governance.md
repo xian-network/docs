@@ -42,6 +42,7 @@ The following values can be changed via governance votes :
 * Staking epochs exist as a snapshot of all validators & delegators stakes in a given time period.
 * a snapshot of validator power & individual validator commission % (which can be changed by a validator)
 * At the end of the `staking-epoch`, all rewards accumulated are available to be claimed by the owners of tokens staked at the beginning of that epoch.
+    * A record is added to the `staking-epoch` detailing how many tokens are to be minted & how much many fees were accumulated. 
 * At the beginning of a new `staking-epoch`, a record is created of the global amt staked & the owners of those tokens.
 * New tokens locked by validators / delegators will not be recognised & eligble to participate in governance & receive rewards until the beginning of the following `staking-epoch`
 
@@ -136,6 +137,7 @@ Staked Amount: 2000, Reward Percentage: 5.12%
     - Validators who un-stake their tokens are immediately removed from the quorum
     - Un-staked tokens will no longer receive rewards after the end of the current StakingEpoch
     - Both validators and delegators who un-stake their token must wait until the validator `unbonding_period` has passed before regaining access to their tokens
+    - All rewards must be calculated and credited to the account before performing this action.
 
 <img src="./img/staking-delegator.png" alt="Delegator staking and unstaking" />
 <img src="./img/staking-validator.png" alt="Validator staking and unstaking" />
@@ -156,12 +158,12 @@ Validators = Hash() # Validators:<validator_account> : dict
 """
     {
         amount: float, 
-        unbonding: date or False, 
+        unbonding: Date or False, 
         v_power: float, 
         d_power: float,
         commission: float,
-        epoch_joined: int
-        epoch_collected: int
+        epoch_joined: int # The index of current_epoch + 1
+        epoch_collected: int or None # The index of the last epoch which rewards were collected for.
     }
 """
 Delegators = Hash() # Delegators:<delegator_account>:<validator_account> 
@@ -169,23 +171,23 @@ Delegators = Hash() # Delegators:<delegator_account>:<validator_account>
     {
         amount: float, 
         unbonding: Date or False,
-        epoch_joined: int
-        epoch_collected: int or None
+        epoch_joined: int # The index of current_epoch + 1
+        epoch_collected: int or None # The index of the last epoch which rewards were collected for.
     }
 ```
 
 ## Receiving Rewards
 
-### Delegators
-
-Delegators & Validators may make a transaction to receive their rewards up to the last finalised Epoch.
-
-What rewards are collected, 
+* Delegators & Validators may make a transaction to receive their rewards up to the last finalised `staking-epoch`.
+* Each `staking-epoch` the actor was present for must be iterated over, the rewards due calculated & added to the actor's account.
+* `epoch_collected` is updated the the last completed `staking_epoch`
 
 ### Issues : 
-    - How do we make sure that delegators only receive rewards for `staking_epochs` where their validator was active ?
-    - We must make sure that the correct fee % is allocated to validators for each period.
-    - Fees & rewards must only be allocated for epochs where the validator was present in the active validator set.
+- How do we make sure that delegators only receive rewards for `staking_epochs` where their validator was active ?
+- We must make sure that the correct fee % is allocated to validators for each period.
+- Fees & rewards must only be allocated for epochs where the validator was present in the active validator set.
+- The amount of `staking_epochs` iterated over may be in the thousands, we must ensure that contracting can handle this.
+- What's the most efficient way to do this ?
 
 
 ### Restaking / Changing Delegations to different validators
