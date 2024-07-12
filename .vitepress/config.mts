@@ -111,6 +111,11 @@ export default defineConfig({
                     { text: 'Stamps', link: '/coin/stamps' },
                     { text: 'Acquiring and Storing', link: '/coin/acquiring-and-storing' },
                 ]
+            },
+            {
+                text: 'Staking & Governance',
+                collapsed: false,
+                link: '/governance/staking-governance.md'
             }
         ],
 
