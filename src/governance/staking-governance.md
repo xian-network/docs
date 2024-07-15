@@ -1,4 +1,6 @@
-# Governance / Staking
+# !!! DRAFT !!!
+
+# Staking
 
 Xian tokens can be used to engage in governance in two ways : 
 
