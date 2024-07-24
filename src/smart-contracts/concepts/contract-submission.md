@@ -66,7 +66,7 @@ balances = Hash()
 
 @construct
 def seed():
-    balances['stu'] = 1000000
+    balances['bill'] = 1000000
 
 @export
 def transfer(amount, to):
@@ -90,7 +90,7 @@ __balances = Hash(contract='__main__', name='balances')
 
 
 def ____():
-    __balances['stu'] = 1000000
+    __balances['bill'] = 1000000
 
 
 @__export('__main__')

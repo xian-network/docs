@@ -264,8 +264,8 @@ Python allows multiple assignment. Trying to do a multiple assignment from an OR
 x, y = Hash()
 @export
 def set():
-    x['stu'] = 100
-    y['stu'] = 999
+    x['bill'] = 100
+    y['bill'] = 999
 ```
 
 #### S13- No valid contracting decorator found

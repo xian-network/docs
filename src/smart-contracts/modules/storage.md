@@ -49,7 +49,7 @@ steve['health'] == 900 # True
 
 ```python
 authorized_parties = Variable()
-parties = ['steve', 'alex', 'stu', 'raghu', 'tejas']
+parties = ['steve', 'alex', 'bill', 'raghu', 'tejas']
 authorized_parties.set(parties)
 
 # This will fail if the contract sender isn't in the authorized parties list.
@@ -68,7 +68,7 @@ def example():
     owner.set('hello')
     a = owner.get()
 
-    balances['stu'] = 100
+    balances['bill'] = 100
     a = balances['something']
 ```
 
@@ -104,14 +104,14 @@ Driver is pulled from the Runtime (`rt`) module when the contract is being execu
 some_contract.py (Smart Contract)
 ```python
 owner = Variable()
-owner.set('stu')
+owner.set('bill')
 ```
 
 Executes on contract runtime and sets the value for this variable. The above code causes the following key/value pair to be written into the state.
 
 | Key               | Value |
 |-------------------|-------|
-| some_contract.owner | stu   |
+| some_contract.owner | bill   |
 
 __NOTE:__ You have to use the `set` method to alter data. If you use standard `=`, it will just cause the object to be set to whatever you pass.
 
@@ -130,9 +130,9 @@ owner
 some_contract.py (Smart Contract)
 ```python
 owner = Variable()
-owner.set('stu')
+owner.set('bill')
 
-owner.get() == 'stu' # True
+owner.get() == 'bill' # True
 ```
 
 Returns the value that is stored at this Variable's state location.
@@ -141,9 +141,9 @@ __NOTE:__ The converse applies to the `get` function. Simply setting a variable 
 
 ```python
 owner = Variable()
-owner.set('stu')
+owner.set('bill')
 owner.get()
->> 'stu'
+>> 'bill'
 
 a = owner
 a
@@ -183,9 +183,9 @@ Similar to Variable's \_\_init\_\_ except that a different keyword argument `def
 some_contract.py (Smart Contract)
 ```python
 balances = Hash(default_value=0)
-balances['stu'] = 1_000_000
+balances['bill'] = 1_000_000
 
-balances['stu'] == 1_000_000 # True
+balances['bill'] == 1_000_000 # True
 balances['raghu'] == 0 # True
 ```
 
@@ -196,14 +196,14 @@ Equivalent to Variable's `get` but accepts an additional argument to specify the
 some_contract.py (Smart Contract)
 ```python
 balances = Hash(default_value=0)
-balances.set('stu', 1_000_000)
+balances.set('bill', 1_000_000)
 balances.set('raghu', 100)
 balances.set('tejas', 777)
 ```
 
 | Key                           | Value     |
 |-------------------------------|-----------|
-| `some_contract.balances:stu`  | 1,000,000 |
+| `some_contract.balances:bill`  | 1,000,000 |
 | `some_contract.balances:raghu`| 100       |
 | `some_contract.balances:tejas`| 777       |
 
@@ -214,20 +214,20 @@ You can provide an arbitrary number of keys (up to 16) to `set` and it will reac
 subaccounts.py (Smart Contract)
 ```python
 balances = Hash(default_value=0)
-balances.set('stu', 1_000_000)
-balances.set(('stu', 'raghu'), 1_000)
-balances.set(('raghu', 'stu'), 555)
-balances.set(('stu', 'raghu', 'tejas'), 777)
+balances.set('bill', 1_000_000)
+balances.set(('bill', 'raghu'), 1_000)
+balances.set(('raghu', 'bill'), 555)
+balances.set(('bill', 'raghu', 'tejas'), 777)
 ```
 
 This will create the following state space:
 
 | Key                                  | Value     |
 |--------------------------------------|-----------|
-| `subaccounts.balances:stu`           | 1,000,000 |
-| `subaccounts.balances:stu:raghu`     | 1,000     |
-| `subaccounts.balances:raghu:stu`     | 555       |
-| `subaccounts.balances:stu:raghu:tejas` | 777     |
+| `subaccounts.balances:bill`           | 1,000,000 |
+| `subaccounts.balances:bill:raghu`     | 1,000     |
+| `subaccounts.balances:raghu:bill`     | 555       |
+| `subaccounts.balances:bill:raghu:tejas` | 777     |
 
 #### get(self, key)
 
@@ -236,11 +236,11 @@ Inverse of `set`, where the value for a provided key is returned. If it is `None
 some_contract.py (Smart Contract)
 ```python
 balances = Hash(default_value=0)
-balances.set('stu', 1_000_000)
+balances.set('bill', 1_000_000)
 balances.set('raghu', 100)
 balances.set('tejas', 777)
 
-balances.get('stu') == 1_000_000 # True
+balances.get('bill') == 1_000_000 # True
 balances.get('raghu') == 100 # True
 balances.get('tejas') == 777 # True
 ```
@@ -253,47 +253,47 @@ Just like `set`, you retrieve data stored in multihashes by providing the list o
 subaccounts.py (Smart Contract)
 ```python
 balances = Hash(default_value=0)
-balances.set('stu', 1_000_000)
-balances.set(('stu', 'raghu'), 1_000)
-balances.set(('raghu', 'stu'), 555)
-balances.set(('stu', 'raghu', 'tejas'), 777)
+balances.set('bill', 1_000_000)
+balances.set(('bill', 'raghu'), 1_000)
+balances.set(('raghu', 'bill'), 555)
+balances.set(('bill', 'raghu', 'tejas'), 777)
 
-balances.get('stu') == 1_000_000 # True
-balances.get(('stu', 'raghu')) == 1_000 # True
-balances.get(('raghu', 'stu')) == 555 # True
-balances.get(('stu', 'raghu', 'tejas')) == 777 # True
+balances.get('bill') == 1_000_000 # True
+balances.get(('bill', 'raghu')) == 1_000 # True
+balances.get(('raghu', 'bill')) == 555 # True
+balances.get(('bill', 'raghu', 'tejas')) == 777 # True
 
-balances.get(('stu', 'raghu', 'tejas', 'steve')) == 0 # True
+balances.get(('bill', 'raghu', 'tejas', 'steve')) == 0 # True
 ```
 
 __NOTE:__ If storage returns a Python object or dictionary, modifications onto that dictionary will __not__ be synced to storage until you set the key to the altered value again. This is vitally important.
 ```python
 owner = Hash(default_value=0)
-owner.set('stu') = {
+owner.set('bill') = {
 	'complex': 123,
 	'object': 567
 }
 
-d = owner.get('stu') # Get the dictionary from storage
+d = owner.get('bill') # Get the dictionary from storage
 d['complex'] = 999 # Set a value on the retrieved dictionary
-e = owner.get('stu') # Retrieve the same value for comparison
+e = owner.get('bill') # Retrieve the same value for comparison
 
 d['complex'] == e['complex'] # False
 ```
 
 ```python
 owner = Hash(default_value=0)
-owner.set('stu') = {
+owner.set('bill') = {
 	'complex': 123,
 	'object': 567
 }
 
-d = owner.get('stu') # Get the dictionary from storage
+d = owner.get('bill') # Get the dictionary from storage
 d['complex'] = 999 # Set a value on the retrieved dictionary
 
-owner.set('stu', d) # Set storage location to the modified dictionary
+owner.set('bill', d) # Set storage location to the modified dictionary
 
-e = owner.get('stu') # Retrieve the same value for comparison
+e = owner.get('bill') # Retrieve the same value for comparison
 
 d['complex'] == e['complex'] # True!
 ```
@@ -305,17 +305,17 @@ Equal functionality to `set`, but allows slice notation for convenience. __This 
 subaccounts.py (Smart Contract)
 ```python
 balances = Hash(default_value=0)
-balances['stu'] = 1_000_000
-balances['stu', 'raghu'] = 1_000
-balances['raghu', 'stu'] = 555
-balances['stu', 'raghu', 'tejas'] = 777
+balances['bill'] = 1_000_000
+balances['bill', 'raghu'] = 1_000
+balances['raghu', 'bill'] = 555
+balances['bill', 'raghu', 'tejas'] = 777
 ```
 
 __NOTE:__ The problem that occurs with Variable's set does not occur with Hashes.
 ```python
 owner = Hash(default_value=0)
-owner['stu'] = 100
-owner['stu']
+owner['bill'] = 100
+owner['bill']
 >> 100
 ```
 
@@ -325,17 +325,17 @@ Equal functionality to `set`, but allows slice notation for convenience. __This 
 subaccounts.py (Smart Contract)
 ```python
 balances = Hash(default_value=0)
-balances['stu'] = 1_000_000
-balances['stu', 'raghu'] = 1_000
-balances['raghu', 'stu'] = 555
-balances['stu', 'raghu', 'tejas'] = 777
+balances['bill'] = 1_000_000
+balances['bill', 'raghu'] = 1_000
+balances['raghu', 'bill'] = 555
+balances['bill', 'raghu', 'tejas'] = 777
 
-balances['stu'] == 1_000_000 # True
-balances['stu', 'raghu'] == 1_000 # True
-balances['raghu', 'stu'] == 555 # True
-balances['stu', 'raghu', 'tejas'] == 777 # True
+balances['bill'] == 1_000_000 # True
+balances['bill', 'raghu'] == 1_000 # True
+balances['raghu', 'bill'] == 555 # True
+balances['bill', 'raghu', 'tejas'] == 777 # True
 
-balances['stu', 'raghu', 'tejas', 'steve'] == 0 # True
+balances['bill', 'raghu', 'tejas', 'steve'] == 0 # True
 ```
 
 #### all(self, \*args):
@@ -344,11 +344,11 @@ Returns all of the values in a particular hash. For multihashes, it returns all 
 
 | Key                              | Value     |
 |----------------------------------|-----------|
-| `subaccounts.balances:stu`       | 1,000,000 |
-| `subaccounts.balances:stu:raghu` | 1,000     |
-| `subaccounts.balances:stu:tejas` | 555       |
+| `subaccounts.balances:bill`       | 1,000,000 |
+| `subaccounts.balances:bill:raghu` | 1,000     |
+| `subaccounts.balances:bill:tejas` | 555       |
 | `subaccounts.balances:raghu`     | 777       |
-| `subaccounts.balances:raghu:stu` | 10,000    |
+| `subaccounts.balances:raghu:bill` | 10,000    |
 | `subaccounts.balances:raghu:tejas` | 100,000  |
 
 
@@ -367,16 +367,16 @@ Clears an entire hash or a section of a hash if the list of keys are provided. A
 
 | Key                                | Value     |
 |------------------------------------|-----------|
-| `subaccounts.balances:stu`         | 1,000,000 |
-| `subaccounts.balances:stu:raghu`   | 1,000     |
-| `subaccounts.balances:stu:tejas`   | 555       |
+| `subaccounts.balances:bill`         | 1,000,000 |
+| `subaccounts.balances:bill:raghu`   | 1,000     |
+| `subaccounts.balances:bill:tejas`   | 555       |
 | `subaccounts.balances:raghu`       | 777       |
-| `subaccounts.balances:raghu:stu`   | 10,000    |
+| `subaccounts.balances:raghu:bill`   | 10,000    |
 | `subaccounts.balances:raghu:tejas` | 100,000   |
 
 
 ```python
-balances.clear('stu')
+balances.clear('bill')
 balances.all() # None of Raghu's accounts are affected
 >> [777, 10000, 100000]
 ```

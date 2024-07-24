@@ -37,7 +37,7 @@ def ping(pong):
 
 e = Executor(metering=False)
 
-e.execute(sender='stu',
+e.execute(sender='bill',
 		  contract_name='submission',
 		  function_name='submit_contract',
 		  kwargs={
