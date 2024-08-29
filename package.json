@@ -5,6 +5,7 @@
     "preview": "npx vitepress preview"
   },
   "dependencies": {
+    "tsparticles": "^3.5.0",
     "vitepress": "^1.2.3"
   }
 }

@@ -4,15 +4,13 @@
   
   <script setup>
   import { onMounted } from 'vue';
-  
-  const tsParticlesModule = import("https://cdn.jsdelivr.net/npm/@tsparticles/engine@3.1.0/+esm");
-  const loadAllModule = import("https://cdn.jsdelivr.net/npm/@tsparticles/all@3.1.0/+esm");
+  // import { tsParticles } from "tsparticles";
+  import { loadFull } from "tsparticles";
 
   async function loadParticles(options) {
-    const { tsParticles } = await tsParticlesModule;
-    const { loadAll } = await loadAllModule;
-    await loadAll(tsParticles);
-    await tsParticles.load({ id: "particles-js", options });
+  await loadFull(tsParticles);
+
+  await tsParticles.load({ id: "particles-js", options });
 }
 
 const configs = {
