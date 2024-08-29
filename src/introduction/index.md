@@ -1,5 +1,5 @@
 
-<img src="/xian-logo.png" alt="Xian Logo" width="100" height="100">
+<img src="/xian-white.svg" alt="Xian Logo" width="100" height="100">
 
 ## Xian 
 ***[ sh ee - ah n ]***

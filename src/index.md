@@ -4,10 +4,10 @@ layout: home
 
 hero:
   name: "Xian Network"
-  text: "Documentation"
+  text: "Knowledge Base"
   tagline: Build the next big thing on a robust, fast & secure Python blockchain.
   image:
-    src: /xian-logo-shadow.png
+    src: /xian-black.svg
     alt: Xian
   actions:
     - theme: brand

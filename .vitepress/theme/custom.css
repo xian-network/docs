@@ -1,20 +1,174 @@
-pre code {
-    font-size: 0.78rem !important;
-    font-family: "Fira Mono", monospace;
-    font-weight: 500;
+:root {
+    --vp-c-brand-1: #93e8e1;
+    --vp-c-brand-darker: #b7faf4;
+    --vp-custom-block-info-code-bg: #5d5d5d;
+    --vp-code-bg: var(--vp-custom-block-info-code-bg);
+    --vp-button-brand-bg: #93e8e1;
+    --vp-button-brand-text: #000;
+    /* --vp-c-brand-2: #6cd762; */
 }
 
-p, li {
+
+/**
+ * Component: Button
+ * -------------------------------------------------------------------------- */
+
+:root {
+    --vp-button-brand-border: transparent;
+    /* --vp-button-brand-text: var(--vp-c-white); */
+    --vp-button-brand-bg: var(#000);
+    --vp-button-brand-hover-border: transparent;
+    --vp-button-brand-hover-text: var(--vp-c-white);
+    --vp-button-brand-hover-bg: var(--vp-c-brand-darker);
+    --vp-button-brand-active-border: 1px solid black;
+    /* --vp-button-brand-active-text: var(--vp-c-white); */
+    --vp-button-brand-active-bg: var(--vp-c-brand-1);
+}
+
+
+.dark .VPNavBarTitle img {
+    filter: invert(100%);
+}
+
+.dark  .VPHero .VPImage {
+    filter: invert(100%);
+}
+
+
+.light pre code {
+    font-size: 0.78rem !important;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 400;
+    color: #000 !important;
+}
+
+p,
+li {
     font-size: 0.9rem;
 }
 
-.info, .tip, .warning {
+@media (min-width: 960px) {
+
+    .VPHero>.container {
+        flex-direction: row-reverse;
+    }
+
+    .clip {
+        line-height: 2.1;
+        font-size: 10rem;
+        letter-spacing: 0.9rem;
+        font-weight: 400;
+        line-height: 9rem;
+    }
+}
+
+@media (min-width: 640px) {
+    :root {
+        --vp-home-hero-image-filter: blur(56px);
+    }
+
+    .clip {
+        line-height: 2.1;
+        font-size: 7rem;
+        letter-spacing: 0.9rem;
+        font-weight: 400;
+        line-height: 6rem;
+    }
+
+    .main>p.text {
+        font-family: "Imbue", sans-serif !important;
+        padding-top: 3rem;
+        font-size: 3rem !important;
+        font-weight: 200 !important;
+        letter-spacing: 0.9rem;
+    }
+}
+
+@media (max-width: 640px) {
+
+    .clip {
+        line-height: 2.1;
+        font-size: 5rem;
+        letter-spacing: 0.9rem;
+        font-weight: 400;
+        line-height: 4rem;
+    }
+
+    .main>p.text {
+        font-family: "Imbue", sans-serif !important;
+        padding-top: 3rem;
+        font-size: 2rem !important;
+        font-weight: 200 !important;
+        letter-spacing: 0.9rem;
+    }
+}
+
+
+
+
+
+
+
+.info,
+.tip,
+.warning {
     font-size: 0.8rem;
 }
 
-html, body {
-    font-family: "Fira Sans", sans-serif;
-    font-weight: 400;
-    line-height: 2.1;
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    font-family: 'Fira Sans', sans-serif;
 }
 
+html,
+body {
+    font-family: 'Fira Sans', monospace;
+}
+
+.clip {
+    font-family: "Imbue", sans-serif;
+}
+
+.main>p.text {
+    font-family: "Imbue", sans-serif !important;
+    padding-top: 1.5rem;
+    font-size: 4rem;
+    font-weight: 400;
+    letter-spacing: 0.9rem;
+}
+
+.title {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1rem !important;
+    font-weight: 00;
+}
+
+.tagline {
+    padding-top: 1.5rem !important;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.2rem !important;
+    font-weight: 400;
+}
+
+.details {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.rem !important;
+    font-weight: 400;
+}
+
+.VPButton {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1.2rem !important;
+    border-radius: 0px !important;
+    height: 2.6rem !important;
+}
+
+h2.text,
+h3.text,
+p.text {
+    font-family: 'Roboto Mono', monospace !important;
+}
