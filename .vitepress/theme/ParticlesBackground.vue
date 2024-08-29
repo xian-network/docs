@@ -4,12 +4,13 @@
   
   <script setup>
   import { onMounted } from 'vue';
-  // import { tsParticles } from "tsparticles";
+  // import { tsParticles } from "/npm/@tsparticles/engine@3.1.0/+esm";
   import { loadFull } from "tsparticles";
+  import { tsParticles } from "@tsparticles/engine";
 
   async function loadParticles(options) {
+  console.log(tsParticles)
   await loadFull(tsParticles);
-
   await tsParticles.load({ id: "particles-js", options });
 }
 

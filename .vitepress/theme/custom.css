@@ -98,7 +98,7 @@ li {
         font-family: "Imbue", sans-serif !important;
         padding-top: 3rem;
         font-size: 2rem !important;
-        font-weight: 200 !important;
+        font-weight: 400 !important;
         letter-spacing: 0.9rem;
     }
 }
@@ -156,8 +156,9 @@ body {
 
 .details {
     font-family: 'Roboto Mono', monospace;
-    font-size: 0.rem !important;
-    font-weight: 400;
+    font-size: 0.8rem !important;
+    /* color: black; */
+    /* font-weight: 400; */
 }
 
 .VPButton {
