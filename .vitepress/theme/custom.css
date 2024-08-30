@@ -131,6 +131,7 @@ body {
 
 .clip {
     font-family: "Imbue", sans-serif;
+    mix-blend-mode: difference !important; /* This line applies the blend mode to headings */    
 }
 
 .main>p.text {
