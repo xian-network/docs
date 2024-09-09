@@ -1,6 +1,6 @@
 :root {
     --vp-c-brand-1: #93e8e1;
-    --vp-c-brand-darker: #b7faf4;
+    --vp-c-brand-darker: #69bab3;
     --vp-custom-block-info-code-bg: #5d5d5d;
     --vp-code-bg: var(--vp-custom-block-info-code-bg);
     --vp-button-brand-bg: #93e8e1;
@@ -32,6 +32,10 @@
 
 .dark  .VPHero .VPImage {
     filter: invert(100%);
+}
+
+:root .link-text-value {
+    color: var(--vp-c-brand-darker) !important;
 }
 
 
