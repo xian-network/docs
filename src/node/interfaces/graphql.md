@@ -5,7 +5,7 @@ description: Query using GraphQL
 
 # GraphQL
 
-## Available Events
+## Endpoint
 
 Every Service Node provides a GraphQL endpoint.
 
