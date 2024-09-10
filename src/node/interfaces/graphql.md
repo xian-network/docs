@@ -9,5 +9,5 @@ description: Query using GraphQL
 
 Every Service Node provides a GraphQL endpoint.
 
-[https://testnet.xian.org/graphql](https://testnet.xian.org/graphiql)
+[https://testnet.xian.org/graphiql](https://testnet.xian.org/graphiql)
 
