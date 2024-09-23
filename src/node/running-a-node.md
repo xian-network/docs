@@ -75,7 +75,7 @@ make setup
 make core-build
 make core-up
 make init
-make configure CONFIGURE_ARGS='--moniker <your-moniker> --genesis-file-name genesis-devnet.json --validator-privkey <priv-key> --seed-node 128.140.96.150 --copy-genesis'
+make configure CONFIGURE_ARGS='--moniker <your-moniker> --genesis-file-name genesis-rcnet.json --validator-privkey <priv-key> --seed-node 188.68.33.32 --copy-genesis'
 
 ```
 * For a Blockchain Data Service Node
@@ -83,10 +83,10 @@ make configure CONFIGURE_ARGS='--moniker <your-moniker> --genesis-file-name gene
 make core-bds-build
 make core-bds-up
 make init
-make configure CONFIGURE_ARGS='--moniker <your-moniker> --genesis-file-name genesis-devnet.json --validator-privkey <priv-key> --seed-node 128.140.96.150 --copy-genesis --service-node'
+make configure CONFIGURE_ARGS='--moniker <your-moniker> --genesis-file-name genesis-rcnet.json --validator-privkey <priv-key> --seed-node 188.68.33.32 --copy-genesis --service-node'
 ```
 
-## Starting the node
+## Starting the Validator Node
 * Headless Mode
 ```bash
 make up
@@ -94,8 +94,18 @@ make up
 * Interactive Shell
 ```bash
 make core-shell
-cd xian-core
 make up
+```
+
+## Starting the Full Node / BDS
+* Headless Mode
+```bash
+make up
+```
+* Interactive Shell
+```bash
+make core-bds-shell
+make up-bds
 ```
 
 * When finished
@@ -121,7 +131,6 @@ make down
 ```
 * From Container Shell
 ```bash
-cd xian-core
 make down
 ```
 
@@ -130,5 +139,5 @@ make down
 ```bash
 make core-down
 # or
-make code-bds-down
+make core-bds-down
 ```
