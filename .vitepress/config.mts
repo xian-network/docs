@@ -99,6 +99,7 @@ export default defineConfig({
                         items: [
                             { text: 'REST', link: '/node/interfaces/rest' },
                             { text: 'Websockets', link: '/node/interfaces/websockets' },
+                            { text: 'GraphQL', link: '/node/interfaces/graphql' },
                         ]
                     },
                     {
