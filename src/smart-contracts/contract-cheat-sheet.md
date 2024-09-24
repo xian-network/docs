@@ -151,4 +151,23 @@ def who_am_i():
 @export
 def get_top_level_signer():
     return ctx.signer 
+
+# Exception handling
+@export
+def calculate():
+    some_value = 0
+
+    # This will not work. The transaction will result in an error because 
+    # it's not allowed to use exceptions in smart contracts.
+    try:
+        return 100 / some_value
+    except:
+        return "Cannot divide by 0"
+
+    # Instead, use asserts
+    assert some_value != 0, "Cannot divide by 0"
+
+    # Or use IF statements
+    if some_value == 0:
+        return "Cannot divide by 0"
 ```
