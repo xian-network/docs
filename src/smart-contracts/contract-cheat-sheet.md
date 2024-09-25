@@ -157,7 +157,7 @@ def get_top_level_signer():
 def calculate():
     some_value = 0
 
-    # This will not work. The transaction will result in an error because 
+    # This will not work. The transaction will fail because 
     # it's not allowed to use exceptions in smart contracts.
     try:
         return 100 / some_value
