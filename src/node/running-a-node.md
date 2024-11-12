@@ -66,7 +66,9 @@ rm get-docker.sh
 ```bash
 git clone https://github.com/xian-network/xian-stack.git
 cd xian-stack
-make setup
+make setup CORE_BRANCH=<branch-name> CONTRACTING_BRANCH=<branch-name>
+# for RCNet, use `make setup CORE_BRANCH=rcnet CONTRACTING_BRANCH=rcnet`
+# for Testnet, use `make setup CORE_BRANCH=devnet CONTRACTING_BRANCH=devnet`
 ```
 
 ### Build
@@ -116,7 +118,6 @@ exit
 ## Viewing Logs
 ```bash
 make core-shell
-cd xian-core
 pm2 logs
 ```
 * When finished
