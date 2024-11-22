@@ -142,3 +142,22 @@ make core-down
 # or
 make core-bds-down
 ```
+
+# Running tests & developing on xian-core
+
+Install `xian-stack` as per the instructions above.
+
+```sh
+# Build the dev environment
+make core-dev-build
+make core-dev-shell
+
+# from the development container
+pytest tests/
+
+# when finished, exit the container
+exit
+
+# shut down the container
+make core-dev-down
+```
