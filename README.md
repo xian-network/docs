@@ -9,14 +9,14 @@ Documentation for the Xian blockchain platform.
 - npm/yarn
 
 ### Setup
-```bash
+```
 git clone https://github.com/xian-network/docs.git
 cd docs
 npm install
 ```
 
 ### Development
-```bash
+```
 npm run dev
 ```
 Server starts at `http://localhost:5173`
