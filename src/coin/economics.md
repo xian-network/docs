@@ -15,11 +15,17 @@ This distribution strategy ensures that the Xian project is supported by a diver
 
 ## **Transaction Fees (Stamps)**
 
-In Xian, transaction fees, known as stamps, serve multiple purposes: incentivizing validators, rewarding smart contract developers, and ensuring the sustainability of the DAO. The distribution of transaction fees is as follows:
+When a transaction is executed, the fees (also called "stamps") are distributed as follows:
 
-* **Split Between Developers and Validators**: Transaction fees collected are split between the deployers/developers of the smart contracts where the transaction fees were incurred and the DAO. This model not only incentivizes the development of high-quality smart contracts on the Xian platform but also ensures continuous funding for the DAO's initiatives.
-* **Burning Mechanism (1%)**: To introduce a deflationary mechanism into the economy, 1% of the transaction fees (stamps) are permanently burned. This burning reduces the total supply of coins over time, potentially increasing the value of the remaining coins as the usage of the Xian blockchain grows.
+* 68% to the contract developer that wrote the executed contract
+* 30% to validators (split evenly among active validators)
+* 1% burned (reducing total supply)
+* 1% to foundation wallet
 
-## **Deflationary Pressure and Economic Sustainability**
+These percentages can be adjusted through validator governance votes.
 
-The decision to burn a fraction of the transaction fees introduces a deflationary pressure into the Xian economy. This approach is designed to balance the inflationary impact of the initial coin distribution and rewards distribution, ensuring the long-term economic sustainability of the platform. By carefully managing the coin supply and incentivizing the development and use of smart contracts, Xian aims to create a thriving economic ecosystem that supports developers, users, and validators alike.
+This incentivizes:
+* High-quality contract development through developer rewards
+* Network security through validator rewards  
+* Long-term value through deflationary burning
+* Ecosystem development through foundation funding
