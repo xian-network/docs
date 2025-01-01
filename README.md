@@ -1,21 +1,39 @@
-# Docs Readme
+# Xian Documentation
 
-## Quickstart
+Documentation for the Xian blockchain platform.
+
+## Quick Start
+
+### Requirements
+- Node.js >= 18
+- npm/yarn
+
 ### Setup
 ```bash
-git clone https://github.com/xian-network/vitepress.git
-cd vitepress
+git clone https://github.com/xian-network/docs.git
+cd docs
 npm install
 ```
+
 ### Development
 ```bash
 npm run dev
 ```
+Server starts at `http://localhost:5173`
 
-### Build
-- Github actions automatically builds & publishes
-- But if you must ...
-```bash
-npm run build
-npm run preview
+### Content Structure
+```
+xian-docs/
+├── .vitepress/    # Contains config.mts for navigation/sections
+└── src/           # Documentation source files
+```
+**Note: New sections must be added to .vitepress/config.mts**
+
+### Building
+Documentation is auto-built and deployed via GitHub Actions on push to main.
+
+For local builds:
+```
+npm run build    # Build static site
+npm run preview  # Preview built site
 ```
