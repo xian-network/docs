@@ -5,7 +5,7 @@ description: Execution Context in Contracting.
 
 # Context
 
-## Execution Context in Contracting.
+## Execution Context
 
 
 When you are running a contract, you often want to know who is running it. For example, if someone who isn't an account owner tries to spend their money, you need to have some way of identifying who that person is and prevent that from happening. This is where Context, or `ctx` inside of smart contracts, comes into play.
