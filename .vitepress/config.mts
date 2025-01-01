@@ -51,6 +51,7 @@ export default defineConfig({
                                 collapsed: true,
                                 items: [
                                     { text: 'Stamps', link: '/smart-contracts/concepts/stamps' },
+                                    { text: 'Storage', link: '/smart-contracts/concepts/storage' },
                                     { text: 'Valid Code', link: '/smart-contracts/concepts/valid-code' },
                                     { text: 'Contract Submission', link: '/smart-contracts/concepts/contract-submission' },
                                     { text: 'Model', link: '/smart-contracts/concepts/model' },
