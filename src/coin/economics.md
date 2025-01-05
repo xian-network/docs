@@ -9,7 +9,7 @@ The distribution of the initial coin supply was carefully structured to align wi
 * **Founding Private Sale (5%)**: A portion of the coins was sold in a founding private sale, allowing early supporters and strategic partners to participate in the project's growth from its inception.
 * **Public Sale (40%)**: The largest share of the coins were allocated for the public sale, democratizing access to the coins and ensuring a wide distribution among the community.
 * **Team Allocation (20%)**: A total of 20% of the coins were allocated to the team, with 15% released over 5 years to incentivize long-term commitment and 5% provided upfront as a reward for their early contributions to the project.
-* **DAO (35%)**: A quarter of the total supply was reserved for the DAO, funding community-driven development, governance initiatives, and other projects beneficial to the Xian ecosystem.
+* **DAO (35%)**: 35% of the total supply was allocated to the DAO, funding community-driven development, governance initiatives, and other projects beneficial to the Xian ecosystem.
 
 This distribution strategy ensures that the Xian project is supported by a diverse group of stakeholders, including the project team, its community, and investors, all of whom play a critical role in the platform's development and governance.
 
