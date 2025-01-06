@@ -57,6 +57,15 @@ export default defineConfig({
                                     { text: 'Model', link: '/smart-contracts/concepts/model' },
                                 ]
                             },
+                            {
+                                text: 'Standards',
+                                collapsed: true,
+                                items: [
+                                    { text: 'XSC0001', link: '/smart-contracts/standards/xsc0001' },
+                                    { text: 'XSC0002', link: '/smart-contracts/standards/xsc0002' },
+                                    { text: 'XSC0003', link: '/smart-contracts/standards/xsc0003' },
+                                ]
+                            },
                             { text: 'Testing', link: '/smart-contracts/testing' },
                             {
                                 text: 'Examples',
