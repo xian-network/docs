@@ -1,6 +1,6 @@
 ---
 title: xian-py
-description: xian-py is a Python library for interacting with the Xian network.
+description: xian-py is a Python SDK for interacting with the Xian blockchain network.
 ---
 
 # xian-py
