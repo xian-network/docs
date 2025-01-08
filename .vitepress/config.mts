@@ -35,10 +35,8 @@ export default defineConfig({
                             { text: 'Cheat Sheet', link: '/smart-contracts/contract-cheat-sheet' },
                             { text: 'Context', link: '/smart-contracts/context' },
                             { text: 'Functions', link: '/smart-contracts/functions' },
-                            {
-                                text: 'Modules',
-                                collapsed: true,
-                                items: [
+                            { text: 'Events', link: '/smart-contracts/events' },
+                            { text: 'Modules', collapsed: true, items: [
                                     { text: 'Crypto', link: '/smart-contracts/modules/crypto-stdlib' },
                                     { text: 'Hashlib', link: '/smart-contracts/modules/hashlib-stdlib' },
                                     { text: 'Random', link: '/smart-contracts/modules/random-stdlib' },
