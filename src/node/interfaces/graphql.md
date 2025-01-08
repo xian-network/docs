@@ -18,7 +18,7 @@ mainnet : https://node.xian.org/graphiql
 
 In this example we query the balance of the address `e9e8aad29ce8e94fd77d9c55582e5e0c57cf81c552ba61c0d4e34b0dc11fd931`
 
-Query :
+**Query :**
 
 ```graphql
 query QueryState {
@@ -33,7 +33,7 @@ query QueryState {
 }
 ```
 
-Response : 
+**Response : **
 
 ```json
 {
@@ -56,7 +56,7 @@ Response :
 
 In this example we want to get all events where any token is sent to address `1565ff3ef4e54a73e5782f5c1c30c7106142370f90495ef3bb6dd6c2e17dc158` 
 
-Query :
+**Query :**
 
 ```graphql
 query TransferEventQuery {
@@ -78,7 +78,7 @@ query TransferEventQuery {
 }
 ```
 
-Response : 
+**Response : **
 
 ```json
 {
@@ -105,7 +105,7 @@ Response :
 }
 ```
 
-### Javascript Example (Browser)
+## Javascript Example (Browser)
 
 ```tsx
 const endpoint = 'https://testnet.xian.org/graphql';
@@ -122,7 +122,7 @@ const response = await fetch(endpoint, {
 const json = await response.json();
 ```
 
-### Javascript Example (Node)
+## Javascript Example (Node)
 
 ```tsx
 // If using older Node versions, first:
@@ -142,7 +142,7 @@ const response = await fetch(endpoint, {
 const json = await response.json();
 ```
 
-### Python Example
+## Python Example
 
 ```python
 import requests
