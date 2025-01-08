@@ -12,7 +12,7 @@ Here are some example situations when you may want to emit an event from your co
 - When an NFT is minted.
 - When a transfer is received by a specific account.
 - When a transfer is sent from a specific account.
-- When an account approves tokens to be used by a smart contract.
+- When an account approves tokens to be used by a smart contract. 
 
 # Usage
 
