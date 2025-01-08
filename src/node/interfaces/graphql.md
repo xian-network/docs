@@ -13,9 +13,7 @@ testnet : https://testnet.xian.org/graphiql
 mainnet : https://node.xian.org/graphiql
 
 
-## Example Queries
-
-### Querying State
+## Querying State
 
 In this example we query the balance of the address `e9e8aad29ce8e94fd77d9c55582e5e0c57cf81c552ba61c0d4e34b0dc11fd931`
 
@@ -34,7 +32,7 @@ query QueryState {
 }
 ```
 
-**Response : **
+**Response :**
 
 ```json
 {
