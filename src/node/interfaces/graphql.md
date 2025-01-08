@@ -1,4 +1,6 @@
-# GraphQLOverview
+# GraphQL
+
+## Overview
 
 The `Blockchain Data Service (BDS)` indexes all transaction data, state & history in a Postgres DB which can be queried with using the `GraphQL` interface.
 
@@ -10,7 +12,7 @@ testnet : https://testnet.xian.org/graphiql
 
 mainnet : https://node.xian.org/graphiql
 
-# Examples
+## Examples
 
 ## Queries
 
@@ -52,7 +54,7 @@ query QueryState {
 }
 ```
 
-### Querying Events
+## Querying Events
 
 In this example we want to get all events where any token is sent to address `1565ff3ef4e54a73e5782f5c1c30c7106142370f90495ef3bb6dd6c2e17dc158` 
 

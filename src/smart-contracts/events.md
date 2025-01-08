@@ -1,10 +1,12 @@
 # Events
 
+## Overview
+
 LogEvents are used to track & index when your smart contract performs an operation.
 
 Emitted events are automatically recorded & indexed by the `Blockchain Data Service Node (BDS)` & queryable via the [GraphQL API](../node/interfaces/graphql).
 
-# Use-cases
+## Use-cases
 
 In many situations in your app, you will want to track when something happens in your smart contract.
 
@@ -16,7 +18,7 @@ Here are some example situations when you may want to emit an event from your co
 - When a transfer is sent from a specific account.
 - When an account approves tokens to be used by a smart contract. 
 
-# Usage
+## Usage
 
 ### Smart Contract
 
