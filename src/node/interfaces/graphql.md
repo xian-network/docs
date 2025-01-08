@@ -1,4 +1,4 @@
-# Overview
+# GraphQLOverview
 
 The `Blockchain Data Service (BDS)` indexes all transaction data, state & history in a Postgres DB which can be queried with using the `GraphQL` interface.
 
