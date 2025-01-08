@@ -12,9 +12,8 @@ testnet : https://testnet.xian.org/graphiql
 
 mainnet : https://node.xian.org/graphiql
 
-## Examples
 
-## Queries
+## Example Queries
 
 ### Querying State
 
