@@ -32,7 +32,7 @@ export default defineConfig({
                         collapsed: true,
                         items: [
                             { text: 'Contracting Engine', link: '/smart-contracts/' },
-                            { text: 'Cheat Sheet', link: '/smart-contracts/contract-cheat-sheet' },
+                            { text: 'Cheat Sheet', link: '/smart-contracts/cheat-sheet' },
                             { text: 'Context', link: '/smart-contracts/context' },
                             { text: 'Functions', link: '/smart-contracts/functions' },
                             { text: 'Events', link: '/smart-contracts/events' },
