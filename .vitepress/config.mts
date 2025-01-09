@@ -69,7 +69,7 @@ export default defineConfig({
                                 collapsed: true,
                                 items: [
                                     { text: 'Overview', link: '/examples/' },
-                                    { text: 'Uber Dice', link: '/examples/uber-dice-example' },
+                                    { text: 'Uber Dice', link: '/examples/uber-dice' },
                                     { text: 'Token XSC003', link: '/examples/currency' },
                                 ]
                             },
