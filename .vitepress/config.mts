@@ -40,7 +40,6 @@ export default defineConfig({
                                     { text: 'Crypto', link: '/smart-contracts/modules/crypto-stdlib' },
                                     { text: 'Hashlib', link: '/smart-contracts/modules/hashlib-stdlib' },
                                     { text: 'Random', link: '/smart-contracts/modules/random-stdlib' },
-                                    { text: 'Storage', link: '/smart-contracts/modules/storage' },
                                     { text: 'Datetime', link: '/smart-contracts/modules/datetime-stdlib' },
                                 ]
                             },
