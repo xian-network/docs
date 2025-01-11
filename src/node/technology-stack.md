@@ -1,6 +1,6 @@
 # Technology Stack
 
-The Xian blockchain project is built upon a meticulously selected stack of technologies designed to offer scalability, security, and ease of use. Central to our project are [CometBFT](https://cometbft.com/), [ABCI (Application Blockchain Interface)](https://docs.cometbft.com/latest/architecture/abci/), and [Contracting](/smart-contracts/), a Python-based smart contract language. This combination ensures that Xian is not just another blockchain platform; it's a bridge between accessibility and advanced blockchain functionality. Below, we delve into each component of our technology stack and explain how they contribute to making Xian a pioneering solution in the blockchain space.
+The Xian blockchain project is built upon a meticulously selected stack of technologies designed to offer scalability, security, and ease of use. Central to our project are [CometBFT](https://cometbft.com/), [ABCI (Application Blockchain Interface)](https://docs.cometbft.com/latest/architecture/abci/), and [Contracting](/contracts/), a Python-based smart contract language. This combination ensures that Xian is not just another blockchain platform; it's a bridge between accessibility and advanced blockchain functionality. Below, we delve into each component of our technology stack and explain how they contribute to making Xian a pioneering solution in the blockchain space.
 
 ## **CometBFT**
 
