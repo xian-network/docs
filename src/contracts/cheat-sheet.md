@@ -7,7 +7,7 @@ description: Here is a reference contract showcasing many of the syntax and feat
 
 ## Reference Contract
 
-Here is a reference contract showcasing many of the syntax and features of Contracting.
+This reference contract demonstrates the key features and syntax of Contracting.
 
 
 ```python
@@ -100,11 +100,11 @@ def interact_with_other_contract(contract: str, args: dict):
     c = importlib.import_module(contract) 
 
     forced_interface = [
-        # Func is a way to enforce the existence of a function with specific 
-        # arguments
+        # Func is a way to enforce the existence 
+        # of a function with specific arguments
         importlib.Func('do_something', args=('amount', 'to')), 
-        # Var is a way to enforce the existence of a variable with a specific 
-        # type
+        # Var is a way to enforce the existence 
+        # of a variable with a specific type
         importlib.Var('balances', Hash) 
     ] 
 
@@ -140,14 +140,15 @@ def get_foundation_owner():
     # Return value from a previously retrieved Variable object
     return foundation_owner.get()
 
-# The actual caller that called this function. Could be a contract or an account
+# The actual caller that called this function. 
+# Could be a contract or an account
 @export
 def who_am_i():
     return ctx.caller 
 
-# First signer in the call chain (the original signer). This is the account that 
-# initiated the transaction even if the transaction was forwarded by another 
-# contract
+# First signer in the call chain (the original signer). 
+# This is the account that initiated the transaction even 
+# if the transaction was forwarded by another contract
 @export
 def get_top_level_signer():
     return ctx.signer 
@@ -157,8 +158,8 @@ def get_top_level_signer():
 def calculate():
     some_value = 0
 
-    # This will not work. The transaction will result in an error because 
-    # it's not allowed to use exceptions in smart contracts.
+    # This will not work. The transaction will result in an error
+    # because it's not allowed to use exceptions in smart contracts.
     try:
         return 100 / some_value
     except:
