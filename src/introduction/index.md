@@ -31,5 +31,5 @@ Xian is a pioneering blockchain project that melds innovation with accessibility
 
 Telegram : https://t.me/xian_network <br/>
 Discord : https://discord.gg/8W9ZMxUYuA <br/>
-Github : https://github.com/xian-network <br/>
+GitHub : https://github.com/xian-network <br/>
 Forum : https://forum.xian.org
