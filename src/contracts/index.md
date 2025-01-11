@@ -6,7 +6,13 @@ description: The Contracting engine enables contracts to be written in a subset 
 # Contracting Engine
 The Contracting engine enables contracts to be written in a subset of Python designed for writing, testing, and deploying smart contracts with ease and efficiency. It makes blockchain development as intuitive and accessible as possible, leveraging the simplicity of Python to offer a seamless smart contract development experience. <br/><br/>
 
-Contracting simplifies the process of creating, testing, and deploying smart contracts by providing a Pythonic interface to the Xian blockchain. Whether you're a beginner in blockchain technology or an experienced developer looking to streamline your smart contract development workflow, Contracting is designed to enhance your productivity and make blockchain development accessible to a wider audience.
+## Contract Naming Rules
+Unlike other blockchains where contracts have addresses, Xian contracts are identified by their name. Contract names must:
+- Start with 'con_' prefix (except system contracts like 'currency')
+- Be lowercase 
+- Only contain letters, numbers and underscores after prefix
+- Be max 64 characters
+- Match pattern: `^con_[a-z][a-z0-9_]*$`
 
 ## Features
 
