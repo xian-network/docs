@@ -1,6 +1,4 @@
-::: warning
-🚧 Under Construction - This page is in draft status
-:::
+# !!! DRAFT !!!
 
 # Staking
 

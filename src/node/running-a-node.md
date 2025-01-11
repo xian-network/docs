@@ -38,7 +38,7 @@ Blockchain Data Service (`BDS`) nodes improve developer experience by providing 
 - **Architecture** : Intel / AMD x86
 :::
 
-## Generate a wallet
+## Generate a wallet.
 
 - Create a wallet using the <a href="/tools/browser-wallet" target="_blank">browser wallet</a>
 - Export the private key

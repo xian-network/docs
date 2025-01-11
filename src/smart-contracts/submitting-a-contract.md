@@ -2,7 +2,7 @@
 
 ## Using Python
 :::tip Using the `xian-py` library
-[xian-py](/tools/xian-py)
+Installation info @ [xian-py](/tools/xian-py)
 
 ```python
 from xian_py.wallet import Wallet
