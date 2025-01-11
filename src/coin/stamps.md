@@ -1,18 +1,17 @@
-# Stamps
+# Stamps Explained
 
-A `stamp` is a single unit of computational work in a smart contract. Key points:
+In the Xian blockchain ecosystem, "stamps" serve as a fundamental concept, pivotal to understanding how computational work is quantified, limited, and incentivized within smart contracts. This mechanism not only promotes efficient code development but also ensures the network's sustainability by enforcing rate limiting. Here, we delve into the intricacies of stamps, their role in the Xian network, and how they are utilized to balance network load and incentivize the ecosystem's growth.
 
-- Stamps are paid for with Xian tokens
-- Each transaction requires a stamps_supplied value 
-- Reading/writing state, computation, etc. consume stamps
-- Unused stamps are refunded
-- Read operations cost 3 stamps per byte
-- Write operations cost 25 stamps per byte
-- If stamps run out during execution, transaction reverts
+## **What are Stamps?**
+
+A stamp represents a single unit of computational work required by a smart contract on the Xian network. When users wish to execute a smart contract, they must convert a portion of their Xian cryptocurrency into stamps. This conversion process is crucial for several reasons:
+
+* **Rate Limiting**: By requiring stamps for computational work, the Xian network effectively implements a rate-limiting mechanism. This ensures that the network can manage demand, prevent spam transactions, and allocate resources efficiently.
+* **Network Incentivization**: Stamps provide a direct incentive for developers to optimize their smart contracts. Efficient contracts that require fewer stamps lower the cost for users and reduce the network's computational load.
 
 ## **Calculation of Work**
 
-The computational cost of executing smart contract code on the Xian network is determined through a tracing process. Each operation (opcode) in the Python Virtual Machine (VM) is assigned a specific stamp cost. As the smart contract code executes, the corresponding number of stamps is deducted based on the operations performed. This method ensures a fair and transparent way to quantify computational work.
+The computational cost of executing smart contract code on the Xian network is determined through an optimized tracing process. Each operation (opcode) in the Python Virtual Machine (VM) is assigned a specific stamp cost. As the smart contract code executes, the corresponding number of stamps is deducted based on the operations performed. This method ensures a fair and transparent way to quantify computational work.
 
 * **Execution and Deduction**: As a transaction executes, stamps are progressively deducted according to the computational steps taken. This deduction continues until the transaction completes or the allotted stamps are exhausted.
 * **Transaction Success or Failure**: If a transaction consumes all attached stamps before completion, it reverts to its initial state and is deemed unsuccessful. Conversely, if the transaction completes with stamps to spare, the remaining stamps are refunded to the sender, encouraging efficient code usage.

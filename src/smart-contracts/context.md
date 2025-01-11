@@ -5,7 +5,7 @@ description: Execution Context in Contracting.
 
 # Context
 
-## Execution Context
+## Execution Context in Contracting.
 
 
 When you are running a contract, you often want to know who is running it. For example, if someone who isn't an account owner tries to spend their money, you need to have some way of identifying who that person is and prevent that from happening. This is where Context, or `ctx` inside of smart contracts, comes into play.
@@ -56,21 +56,21 @@ def call_direct():
 :::
 
 ```txt
-               con_direct
-ctx.signer    +----------------+
-              |   calling      |
-2fadab39 ---> |   who_am_I( )  |
-              |                |
-              +----------------+
-              ctx.caller = 2fadab39
-
-              con_indirect           con_direct
-ctx.signer    +---------------+      +----------------+
-              |               |      |   calling      |
-2fadab39 ---> |               | ---> |   who_am_I( )  |
-              |               |      |                |
-              +---------------+      +----------------+
-                                     ctx.caller = con_indirect
+                   con_direct     
+    ctx.signer    +----------------+       
+                  |   calling      |        
+    2fadab39 ---> |   who_am_I( )  |        
+                  |                |        
+                  +----------------+        
+                  ctx.caller = 2fadab39    
+ 
+                  con_indirect           con_direct                        
+    ctx.signer    +---------------+      +----------------+                     
+                  |               |      |   calling      |        
+    2fadab39 ---> |               | ---> |   who_am_I( )  |        
+                  |               |      |                |        
+                  +---------------+      +----------------+        
+                                         ctx.caller = con_indirect
 ```
 A good example of how to use this would be in a token contract.
 
