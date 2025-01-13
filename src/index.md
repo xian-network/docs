@@ -15,14 +15,14 @@ hero:
       link: /introduction/
     - theme: alt
       text: Start Building
-      link: /smart-contracts/
+      link: /contracts/
 features:
   - icon: 
       src: ./python-logo.png
       alt: Python
     title: Smart Contracts in Python
     details: Write your smart contracts in native Python. No transpiler necessary.
-    link: "/smart-contracts/"
+    link: "/contracts/"
     linkText: "Read more"
   - title: Generate revenue
     icon:

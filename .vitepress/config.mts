@@ -31,41 +31,50 @@ export default defineConfig({
                         text: 'Smart Contracts',
                         collapsed: true,
                         items: [
-                            { text: 'Contracting Engine', link: '/smart-contracts/' },
-                            { text: 'Cheat Sheet', link: '/smart-contracts/contract-cheat-sheet' },
-                            { text: 'Context', link: '/smart-contracts/context' },
-                            { text: 'Functions', link: '/smart-contracts/functions' },
-                            { text: 'Events', link: '/smart-contracts/events' },
+                            { text: 'Contracting Engine', link: '/contracts/' },
+                            { text: 'Cheat Sheet', link: '/contracts/cheat-sheet' },
+                            { text: 'Context', link: '/contracts/context' },
+                            { text: 'Functions', link: '/contracts/functions' },
+                            { text: 'Events', link: '/contracts/events' },
                             { text: 'Modules', collapsed: true, items: [
-                                    { text: 'Imports', link: '/smart-contracts/modules/imports' },
-                                    { text: 'Crypto', link: '/smart-contracts/modules/crypto-stdlib' },
-                                    { text: 'Hashlib', link: '/smart-contracts/modules/hashlib-stdlib' },
-                                    { text: 'Random', link: '/smart-contracts/modules/random-stdlib' },
-                                    { text: 'Storage', link: '/smart-contracts/modules/storage' },
-                                    { text: 'Datetime', link: '/smart-contracts/modules/datetime-stdlib' },
+                                    { text: 'Crypto', link: '/contracts/modules/crypto-stdlib' },
+                                    { text: 'Hashlib', link: '/contracts/modules/hashlib-stdlib' },
+                                    { text: 'Random', link: '/contracts/modules/random-stdlib' },
+                                    { text: 'Datetime', link: '/contracts/modules/datetime-stdlib' },
+                                    { text: 'Imports', link: '/contracts/modules/imports' },
                                 ]
                             },
                             {
                                 text: 'Concepts',
                                 collapsed: true,
                                 items: [
-                                    { text: 'Stamps', link: '/smart-contracts/concepts/stamps' },
-                                    { text: 'Valid Code', link: '/smart-contracts/concepts/valid-code' },
-                                    { text: 'Contract Submission', link: '/smart-contracts/concepts/contract-submission' },
-                                    { text: 'Model', link: '/smart-contracts/concepts/model' },
+                                    { text: 'Stamps', link: '/contracts/concepts/stamps' },
+                                    { text: 'Storage', link: '/contracts/concepts/storage' },
+                                    { text: 'Valid Code', link: '/contracts/concepts/valid-code' },
+                                    { text: 'Contract Submission', link: '/contracts/concepts/contract-submission' },
+                                    { text: 'Model', link: '/contracts/concepts/model' },
                                 ]
                             },
-                            { text: 'Testing', link: '/smart-contracts/testing' },
+                            {
+                                text: 'Standards',
+                                collapsed: true,
+                                items: [
+                                    { text: 'XSC0001', link: '/contracts/standards/xsc0001' },
+                                    { text: 'XSC0002', link: '/contracts/standards/xsc0002' },
+                                    { text: 'XSC0003', link: '/contracts/standards/xsc0003' },
+                                ]
+                            },
+                            { text: 'Testing', link: '/contracts/testing' },
                             {
                                 text: 'Examples',
                                 collapsed: true,
                                 items: [
                                     { text: 'Overview', link: '/examples/' },
-                                    { text: 'Uber Dice', link: '/examples/uber-dice-example' },
+                                    { text: 'Uber Dice', link: '/examples/uber-dice' },
                                     { text: 'Token XSC003', link: '/examples/currency' },
                                 ]
                             },
-                            { text: "Submitting a Contract", link: "/smart-contracts/submitting-a-contract" }
+                            { text: "Submitting a Contract", link: "/contracts/submitting-a-contract" }
                         ]
                     },
                     {
