@@ -43,7 +43,7 @@ const configs = {
       }
     },
     "size": {
-      "value": 900,
+      "value": 700,
       "random": false,
       "anim": {
         "enable": true,

@@ -37,6 +37,7 @@ export default defineConfig({
                             { text: 'Functions', link: '/smart-contracts/functions' },
                             { text: 'Events', link: '/smart-contracts/events' },
                             { text: 'Modules', collapsed: true, items: [
+                                    { text: 'Imports', link: '/smart-contracts/modules/imports' },
                                     { text: 'Crypto', link: '/smart-contracts/modules/crypto-stdlib' },
                                     { text: 'Hashlib', link: '/smart-contracts/modules/hashlib-stdlib' },
                                     { text: 'Random', link: '/smart-contracts/modules/random-stdlib' },
