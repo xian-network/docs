@@ -6,8 +6,7 @@ The Xian blockchain ecosystem is supported by its native coin, which plays a cen
 
 Xian coins can be acquired through several avenues, reflecting the diverse ecosystem that Xian aims to build:
 
-* **Participating in Sales**: Users can acquire Xian coins by participating in the initial public sale or subsequent sales, subject to availability and terms set by the Xian project.
-* **Exchanges**: Once listed, Xian coins can be traded on cryptocurrency exchanges, allowing users to buy coins from other holders. Be sure to use reputable exchanges and practice secure trading habits.
+* **Exchanges**: Xian coins can be exchanged on [Dex-Trade](https://dex-trade.com/spot/trading/XIANUSDT) with <a href="https://dex-trade.com/spot/trading/XIANUSDT?interface=classic" target="_blank">XIAN/USDT</a> pairing.
 * **Earning Through Participation**: Users can earn Xian coins by contributing to the ecosystem, either through participating in governance, developing smart contracts, or other activities incentivized by the DAO.
 
 ## **The Xian Wallet: A Chrome Extension**
