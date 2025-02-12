@@ -22,12 +22,7 @@ The process works as follows:
    The hex-encoded payload is appended to the RPC URL path for a simulated transaction query (using `https://node.xian.org/abci_query?path="/simulate_tx/<hex>"`).
 
 4. **Response Handling:**  
-   The response is received in Base64 encoding. It is then decoded and checked:
-   - If the decoded value is invalid or empty, the contract’s variable is queried directly.
-   - Otherwise, the function extracts the computed result (the balance).
-
-5. **Result Formatting:**  
-   The balance is parsed as a floating-point number and formatted to 8 decimal places before being returned.
+   The response is received in Base64 encoding. It is then decoded
 
 ## Code Example
 
