@@ -27,6 +27,12 @@ The process works as follows:
 ## Code Example
 
 ```javascript
+function toHexString(byteArray) {
+    return Array.from(byteArray, function(byte) {
+        return ('0' + (byte & 0xFF).toString(16)).slice(-2);
+    }).join('');
+}
+
 async function execute_balance_of(contract, address) {
   let payload = {
     "sender": "",
