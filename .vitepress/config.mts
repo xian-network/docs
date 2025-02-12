@@ -82,6 +82,10 @@ export default defineConfig({
                         link: '/dapp-starters/'
                     },
                     {
+                        text: 'Read Functions Off-Chain',
+                        link: '/read-functions-off-chain/'
+                    },
+                    {
                         text: 'Tools',
                         collapsed: true,
                         items: [
