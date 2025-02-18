@@ -94,6 +94,7 @@ export default defineConfig({
                             { text: 'Browser Wallet', link: '/tools/browser-wallet' },
                             { text: 'dApp Wallet Utils', link: '/tools/xian-wallet-utils' },
                             { text: 'Contract Dev Environment', link: '/tools/contract-dev-environment' },
+{ text: 'Testnet Faucet', link: '/tools/testnet-faucet' },
                         ]
                     },
                 ]
