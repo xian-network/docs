@@ -97,6 +97,10 @@ export default defineConfig({
 { text: 'Faucet', link: '/tools/faucet' },
                         ]
                     },
+                     {
+                        text: '💵 Bounty Program',
+                        link: '/bounty-program/'
+                    },
                 ]
             },
             {
