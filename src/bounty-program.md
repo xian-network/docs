@@ -35,6 +35,9 @@ To encourage participation, partial rewards may be issued based on project quali
 
 🚨 **Minimum Viable Products (MVPs) and partially completed projects may qualify for a fraction of the bounty reward, subject to community and team review.**
 
+💬 Q: What if multiple developers work on the same project?
+The bounty goes to the best, most complete, and first fully deployed solution. However, we may reward other implementations based on their quality, uniqueness, and impact. If multiple projects are valuable, the bounty may be distributed proportionally.
+
 ### **Vesting Schedule:**
 
 - 40% of the bounty is **paid out on delivery**
