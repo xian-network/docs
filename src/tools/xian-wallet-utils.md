@@ -105,3 +105,17 @@ XianWalletUtils.signMessage("message")
         console.error(error);
     });
 ```
+
+### Request a Token to be added to the Wallet
+
+To request a token to be added to the wallet, you can use the `addToken` function. This function returns a promise that resolves with the status of the request.
+
+```javascript
+XianWalletUtils.addToken("con_xns_token")
+    .then(response => {
+        console.log('Accepted', response); // true or false
+    })
+    .catch(error => {
+        console.error(error);
+    });
+```
