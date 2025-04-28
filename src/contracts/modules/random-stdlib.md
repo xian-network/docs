@@ -1,7 +1,7 @@
 
 # random Standard Library
 
-`random` is a pseudorandom number generator that derives a deterministic seed state from the current block number and block height. In Contracting, these environment variables are not automatically supplied. The `ContractingClient` also does not current have support for this feature, so you will have to automatically update your environment with a block height and hash that you would like to use.
+`random` is a pseudorandom number generator that derives a deterministic seed state from the current block number and block hash. In Contracting, these environment variables are not automatically supplied. The `ContractingClient` also does not current have support for this feature, so you will have to automatically update your environment with a block height and hash that you would like to use.
 
 Simply do the following:
 ```python
@@ -48,3 +48,19 @@ random.randint(a: int, b: int)
 random.choice(l: list)
 random.choices(l: list, k: int)
 ```
+
+## Limitations and Security Considerations
+
+### Deterministic Randomness
+Random outputs are seeded from publicly available data (`block_num`, `block_hash`).  
+This means that while outputs appear random, they can be predicted if an attacker knows the block information.
+
+### Front-Running Risk
+A malicious actor could theoretically reproduce the random outputs off-chain and attempt to front-run transactions to achieve favorable outcomes.  
+This is very difficult and unlikely for most applications but must be considered if randomness security is critical.
+
+### Not Cryptographically Secure
+Do not use `random` for generating secrets, encryption keys, or in scenarios where truly unpredictable randomness is required.
+
+### Best Use Cases
+Randomization for gaming, raffles, randomized shuffles, or non-critical randomized operations.
