@@ -53,14 +53,15 @@ random.choices(l: list, k: int)
 
 ### Deterministic Randomness
 Random outputs are seeded from publicly available data (`block_num`, `block_hash`).  
-This means that while outputs appear random, they can be predicted if an attacker knows the block information.
+This means that while outputs appear random, they could theoretically be predicted if an attacker knows the block information — however, in normal operation, block hashes are unknown until after block production.
 
 ### Front-Running Risk
-A malicious actor could theoretically reproduce the random outputs off-chain and attempt to front-run transactions to achieve favorable outcomes.  
-This is very difficult and unlikely for most applications but must be considered if randomness security is critical.
+Since randomness depends on the current block's hash, a malicious actor would need to predict or control the future block hash to front-run a transaction.  
+On a DPoS chain like Xian, this is virtually impossible unless validators themselves act maliciously and collude.
 
 ### Not Cryptographically Secure
 Do not use `random` for generating secrets, encryption keys, or in scenarios where truly unpredictable randomness is required.
 
 ### Best Use Cases
-Randomization for gaming, raffles, randomized shuffles, or non-critical randomized operations.
+Randomization for gaming, raffles, randomized shuffles, or non-critical randomized operations where full cryptographic unpredictability is not necessary.
+
