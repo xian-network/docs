@@ -32,11 +32,11 @@ We’ll judge based on traction, community, creativity, and overall energy. This
 
 | **Prize**                  | **Reward**                                                                            |
 |---------------------------|----------------------------------------------------------------------------------------|
-| 🥇 1st Place               | **50,000 XIAN liquidity** paired with your token on [SnakExchange](https://snakexchange.org/)                      |
-| 🥈 2nd Place               | **25,000 XIAN liquidity** paired with your token on [SnakExchange](https://snakexchange.org/)                      |
-| 🥉 3rd Place               | **10,000 XIAN liquidity** paired with your token on [SnakExchange](https://snakexchange.org/)                      |
+| 🥇 1st Place               | **100,000 XIAN**                      |
+| 🥈 2nd Place               | **50,000 XIAN**                      |
+| 🥉 3rd Place               | **25,000 XIAN**                      |
 
-All liquidity is added as a **permanent LP on SnakExchange** in a 50/50 token:XIAN pair. We will buy half of the liquidity in tokens and add them to the pair.
+All rewards are paid out in linear vesting over a year to incentivize long-term commitment to your token.
 
 ---
 
