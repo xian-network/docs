@@ -22,7 +22,7 @@ To kickstart the ecosystem, we’re launching the **Xian Token Launch Contest** 
    Share your token address and pitch using the [Telegram Community](https://t.me/xian_network/).
 
 4. **Win On-Chain Liquidity**  
-   We’ll select winners and provide **real XIAN liquidity** for their token on SnakExchange.
+   We’ll select winners and provide **real XIAN liquidity** for their token on [SnakExchange](https://snakexchange.org/).
 
 ---
 
@@ -32,9 +32,9 @@ We’ll judge based on traction, community, creativity, and overall energy. This
 
 | **Prize**                  | **Reward**                                                                            |
 |---------------------------|----------------------------------------------------------------------------------------|
-| 🥇 1st Place               | **100,000 XIAN liquidity** paired with your token on SnakExchange                      |
-| 🥈 2nd Place               | **50,000 XIAN liquidity** paired with your token                                       |
-| 🥉 3rd Place               | **25,000 XIAN liquidity** paired with your token                                       |
+| 🥇 1st Place               | **100,000 XIAN liquidity** paired with your token on [SnakExchange](https://snakexchange.org/)                      |
+| 🥈 2nd Place               | **50,000 XIAN liquidity** paired with your token on [SnakExchange](https://snakexchange.org/)                      |
+| 🥉 3rd Place               | **25,000 XIAN liquidity** paired with your token on [SnakExchange](https://snakexchange.org/)                      |
 
 All liquidity is added as a **permanent LP on SnakExchange** in a 50/50 token:XIAN pair.
 
@@ -55,7 +55,7 @@ The **core team will decide the winners**, with public feedback considered. Bonu
 
 ## 🚀 **How to Participate**
 
-1. Create your token using [Token Creator in Wallet](https://x.com/Xian_Network/status/1917552894263415291)
+1. Create your token using the [Token Creator in Wallet](https://x.com/Xian_Network/status/1917552894263415291)
 2. Build hype: memes, communities, mini-sites, anything  
 3. Submit your token here → [Telegram Community](https://t.me/xian_network/)
 4. Final decisions announced publicly on Telegram + Xian.org
