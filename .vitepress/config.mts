@@ -101,6 +101,10 @@ export default defineConfig({
                         text: '💵 Bounty Program',
                         link: '/bounty-program/'
                     },
+                    {
+                        text: '🪙 Token Launch Contest',
+                        link: '/token-contest/'
+                    },
                 ]
             },
             {
