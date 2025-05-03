@@ -21,8 +21,8 @@ To kickstart the ecosystem, we’re launching the **Xian Token Launch Contest** 
 3. **Submit Your Entry**  
    Share your token address and pitch using the [Telegram Community](https://t.me/xian_network/).
 
-4. **Win On-Chain Liquidity**  
-   We’ll select winners and provide **real XIAN liquidity** for their token on [SnakExchange](https://snakexchange.org/).
+4. **Win XIAN**  
+   We’ll select winners and reward them with XIAN.
 
 ---
 
