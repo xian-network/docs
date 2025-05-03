@@ -6,7 +6,7 @@ The Xian Blockchain lets anyone launch a community token in seconds — no codin
 
 🎯 **Can you create the next viral token on Xian?**
 
-To kickstart the ecosystem, we’re launching the **Xian Token Launch Contest** — a high-impact, one-time event where **you can win liquidity for your token** once it gains traction, community, and real usage.
+To kickstart the ecosystem, we’re launching the **Xian Token Launch Contest** — a high-impact, one-time event where **you can win XIAN** once it gains traction, community, and real usage.
 
 ---
 
