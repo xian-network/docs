@@ -19,7 +19,7 @@ To kickstart the ecosystem, we’re launching the **Xian Token Launch Contest** 
    Shill, meme, market, build a cult. Show traction, not just tokenomics.
 
 3. **Submit Your Entry**  
-   Share your token address and pitch using [this form](#) *(or Telegram pinned message)*.
+   Share your token address and pitch using the [Telegram Community](https://t.me/xian_network/).
 
 4. **Win On-Chain Liquidity**  
    We’ll select winners and provide **real XIAN liquidity** for their token on SnakExchange.
