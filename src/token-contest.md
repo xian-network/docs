@@ -6,7 +6,7 @@ The Xian Blockchain lets anyone launch a community token in seconds — no codin
 
 🎯 **Can you create the next viral token on Xian?**
 
-To kickstart the ecosystem, we’re launching the **Xian Token Launch Contest** — a high-impact, one-time event where **you can win liquidity for your token** if it gains traction, community, and real usage.
+To kickstart the ecosystem, we’re launching the **Xian Token Launch Contest** — a high-impact, one-time event where **you can win liquidity for your token** once it gains traction, community, and real usage.
 
 ---
 
@@ -32,11 +32,11 @@ We’ll judge based on traction, community, creativity, and overall energy. This
 
 | **Prize**                  | **Reward**                                                                            |
 |---------------------------|----------------------------------------------------------------------------------------|
-| 🥇 1st Place               | **100,000 XIAN liquidity** paired with your token on [SnakExchange](https://snakexchange.org/)                      |
-| 🥈 2nd Place               | **50,000 XIAN liquidity** paired with your token on [SnakExchange](https://snakexchange.org/)                      |
-| 🥉 3rd Place               | **25,000 XIAN liquidity** paired with your token on [SnakExchange](https://snakexchange.org/)                      |
+| 🥇 1st Place               | **50,000 XIAN liquidity** paired with your token on [SnakExchange](https://snakexchange.org/)                      |
+| 🥈 2nd Place               | **25,000 XIAN liquidity** paired with your token on [SnakExchange](https://snakexchange.org/)                      |
+| 🥉 3rd Place               | **10,000 XIAN liquidity** paired with your token on [SnakExchange](https://snakexchange.org/)                      |
 
-All liquidity is added as a **permanent LP on SnakExchange** in a 50/50 token:XIAN pair.
+All liquidity is added as a **permanent LP on SnakExchange** in a 50/50 token:XIAN pair. We will buy half of the liquidity in tokens and add them to the pair.
 
 ---
 
