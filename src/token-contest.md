@@ -65,7 +65,7 @@ The **core team will decide the winners**, with public feedback considered. Bonu
 ## 📅 **Timeline**
 
 - 🧪 **Contest Starts:** Now  
-- 📝 **Submissions Close:** *1st July 2025*  
+- 📝 **Submissions Close:** TBD
 - 🏁 **Winners Announced:** Within 72h of closing
 
 ---
