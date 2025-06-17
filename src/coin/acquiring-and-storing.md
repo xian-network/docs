@@ -1,30 +1,47 @@
 # Acquiring and Storing
 
-The Xian blockchain ecosystem is supported by its native coin, which plays a central role in transactions, governance, and smart contract interactions. An essential aspect for users within the Xian ecosystem is understanding how to acquire and securely store these coins. This guide will walk you through the process of acquiring Xian coins and using the Xian Wallet, a Chrome extension designed for seamless interaction with the blockchain, including holding coins, transferring them, and engaging with smart contracts and the governance system.
+The Xian ecosystem revolves around its native coin **$XIAN**, which powers transactions, governance, and smart-contract execution.  
+Below is a *fixed guide (17 Jun 2025)* on how to obtain and safeguard $XIAN, reflecting the resources and links published on the official site.
 
-## **Acquiring Xian Coins**
+---
 
-Xian coins can be acquired through several avenues, reflecting the diverse ecosystem that Xian aims to build:
+## **Acquiring $XIAN**
 
-* **Exchanges**: Xian coins can be exchanged on [SNAKexchange](https://snakexchange.org) with <a href="https://snakexchange.org/pairs/" target="_blank">XIAN/USDC</a> pairing.
-* **Earning Through Participation**: Users can earn Xian coins by contributing to the ecosystem, either through participating in governance, developing smart contracts, or other activities incentivized by the DAO.
+| Method | Where | Details |
+|--------|-------|---------|
+| **On-chain DEX (native token)** | **SNAKexchange** – [`XIAN/USDC` pair](https://snakexchange.org/pairs/) | Trade directly on the Xian Layer-1; liquidity is denominated in native $XIAN. |
+| **Bridged token (Solana)** | **Raydium** – [Swap link](https://raydium.io/swap/?inputMint=sol&outputMint=GnaXkbmMV1zGK6bRCQnM9Jd6Jv2Hjw5b2PFVBaKEE5At) | Purchase wrapped $XIAN on Solana, then bridge it to Xian for on-chain use. |
+| **Bridge existing assets** | **Xian Bridge** – <https://bridge.xian.org> | Move SOL, USDC, or bridged $XIAN between Solana and the Xian mainnet. |
+| **Earn by participating** | • Provide liquidity or farm on SNAKexchange (100 %+ APR farms).<br>• Deploy dApps and collect 68 % of gas fees.<br>• Contribute to DAO bounties and governance. |
+| **Faucets** | • [Mainnet faucet](https://xian-faucet-mainnet.poc.workers.dev/)<br>• [Testnet faucet](https://xian-faucet.poc.workers.dev/) | Small starter amounts for testing and development. |
 
-## **The Xian Wallet: A Chrome Extension**
+> **Native vs Bridged:** Stats shown on <xian.org> (price, market cap, circulating supply) refer to the **native token on Xian**. Wrapped $XIAN on Solana may display different metrics on third-party trackers.
 
-The Xian Wallet is a Chrome extension that serves as the primary tool for interacting with the Xian blockchain. It is designed to offer a user-friendly interface for managing your Xian coins, engaging with smart contracts, and participating in the governance of the network.
+---
 
-* **Holding and Transferring Coins**: The wallet allows users to securely hold their Xian coins and transfer them to other addresses. It provides a straightforward interface for managing transactions, ensuring that users can easily send and receive coins.
-* **Interacting with Smart Contracts**: Beyond simple transactions, the Xian Wallet enables users to interact with smart contracts on the Xian blockchain. This includes executing contract functions, deploying new contracts, and participating in decentralized applications (dApps).
-* **Participating in Governance**: The wallet also facilitates engagement with the Xian blockchain's governance processes. Users can vote on proposals, participate in validator elections, and contribute to the decision-making processes that guide the development of the network.
+## **The Xian Wallet (Chrome Extension)**
 
-## **Storing Your Xian Coins Securely**
+**Install:** <https://chromewebstore.google.com/detail/xian-wallet/kcimjjhplbcgkcnanijkolfillgfanlc/>
 
-While the Xian Wallet offers convenience and functionality, it's crucial to follow best practices for security to ensure the safety of your coins:
+### Core Features
+* **Hold & Transfer** – Store native $XIAN and any Xian-based tokens; send or receive with a few clicks.  
+* **dApp & Contract Support** – Execute contract calls, deploy Python smart contracts, and sign transactions directly in-wallet.  
+* **Governance** – Vote on DAO proposals and validator elections without leaving the extension.  
+* **Network Switcher** – Toggle between Mainnet and Testnet for development.
 
-* **Keep Your Private Keys Private**: Never share your wallet's private keys or seed phrase with anyone. Secure storage solutions include hardware wallets or securely encrypted digital backups.
-* **Regularly Update Your Wallet**: Ensure that your Xian Wallet and Chrome browser are always up to date to benefit from the latest security features and enhancements.
-* **Be Cautious with Smart Contract Interactions**: When interacting with smart contracts, be aware of the contract's source and purpose. Only engage with contracts from reputable and trusted developers.
+---
+
+## **Best-Practice Security Checklist**
+
+1. **Back up your seed phrase** offline (paper or encrypted hardware). Xian Wallet cannot recover lost keys.  
+2. **Verify URLs** – Only install the wallet from the Chrome Web Store link above and interact with dApps you trust.  
+3. **Keep software current** – Update Chrome *and* the Xian Wallet to patch vulnerabilities.  
+4. **Use hardware wallets for large holdings** – Ledger/Trezor support is planned; until then, store high-value keys on air-gapped devices.  
+5. **Review contract code** before approving transactions, especially for new tokens—remember that community-created tokens are *not* endorsed by the core team.
+
+---
 
 ## Conclusion
 
-Acquiring and securely storing Xian coins is essential for participating in the diverse and vibrant ecosystem that Xian aims to create. The Xian Wallet, available as a Chrome extension, is your gateway to this world, offering not just a means to manage your coins but also to engage deeply with the blockchain's features, from smart contracts to governance. By following best practices for security and staying informed about the ecosystem's developments, users can maximize their engagement with Xian while ensuring the safety of their digital assets.
+With the Xian Wallet and the acquisition routes outlined above—native DEX trading, bridging, faucets, and on-chain earning—anyone can enter the Xian ecosystem quickly.  
+Follow the security guidelines, keep your software updated, and you’ll be ready to explore Python-powered dApps, yield opportunities, and on-chain governance with confidence.
