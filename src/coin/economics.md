@@ -1,31 +1,44 @@
 # Economics of the Coin
 
-The Xian blockchain introduces a unique economic model centered around its native coin, with a total supply of `111,111,111` coins that are initially minted. This finite supply, along with a detailed distribution strategy and a transaction fee mechanism designed for fairness and sustainability, forms the backbone of Xian's economic ecosystem. Here, we break down the economics of the coin, including its distribution, the role of transaction fees (stamps), and the mechanisms in place to ensure long-term viability and deflationary pressure.
+The Xian blockchain introduces a unique economic model centered around its native coin, with a **maximum supply of 111 ,111 ,111 $XIAN** minted at genesis.  
+What follows is a **fixed snapshot (17 Jun 2025)** of how that supply is currently allocated; it will **not be updated further in this document**.  
+The ≈ 937.258 $XIAN difference between the maximum supply and the table below has already been *permanently burned* by the protocol’s 1 % gas-burn mechanic.
 
-## **Initial Coin Distribution**
+## **Current Supply Allocation**
 
-The distribution of the initial coin supply was carefully structured to align with the long-term goals of the Xian project and ensure a balanced allocation among stakeholders:
+| Allocation | Tokens | % of Max* |
+|------------|------------------|-----------|
+| **Validator DAO Treasury** | 48 409 053.545 | 43.57 % |
+| **Validator DAO Vesting**  | 38 022 158.645 | 34.22 % |
+| **Team Locker**            | 5 364 311.556  | 4.83 % |
+| **Team Vesting**           | 4 243 545.003  | 3.82 % |
+| **Circulating (Live)**     | 15 071 104.993 | 13.56 % |
+| **Total in Existence**     | **111 110 173.742** | 99.16 % |
+| **Burned so far**          | **≈ 937.258** | 0.84 % |
+| **Maximum Supply**         | **111 111 111** | 100 % |
 
-* **Founding Private Sale (5%)**: A portion of the coins was sold in a founding private sale, allowing early supporters and strategic partners to participate in the project's growth from its inception.
-* **Public Sale (40%)**: The largest share of the coins were allocated for the public sale, democratizing access to the coins and ensuring a wide distribution among the community.
-* **Team Allocation (20%)**: A total of 20% of the coins were allocated to the team, with 15% released over 5 years to incentivize long-term commitment and 5% provided upfront as a reward for their early contributions to the project.
-* **DAO (35%)**: 35% of the total supply was allocated to the DAO, funding community-driven development, governance initiatives, and other projects beneficial to the Xian ecosystem.
+\*Percentages rounded to two decimals.
 
-This distribution strategy ensures that the Xian project is supported by a diverse group of stakeholders, including the project team, its community, and investors, all of whom play a critical role in the platform's development and governance.
+### Notes on Allocation
+
+* **Validator DAO** (Treasury + Vesting) controls ≈ 77.8 % of supply to fund governance and ecosystem growth.  
+* **Team tokens** are split between a locked tranche and a vesting schedule, aligning incentives with network success.  
+* **Circulating supply** starts at ~13.6 % and will decrease gradually as ongoing burns outpace fresh unlocks.
 
 ## **Transaction Fees (Stamps)**
 
-When a transaction is executed, the fees (also called "stamps") are distributed as follows:
+Every transaction pays a *stamp* fee that is automatically divided:
 
-* 68% to the contract developer that wrote the executed contract
-* 30% to validators (split evenly among active validators)
-* 1% burned (reducing total supply)
-* 1% to foundation wallet
+* **68 %** → Contract developer  
+* **30 %** → Validators  
+* **1 %**  → Burn (deflationary)  
+* **1 %**  → Foundation wallet  
 
-These percentages can be adjusted through validator governance votes.
+All ratios can be modified through on-chain validator governance.
 
-This incentivizes:
-* High-quality contract development through developer rewards
-* Network security through validator rewards  
-* Long-term value through deflationary burning
-* Ecosystem development through foundation funding
+### Incentive Alignment
+
+* **Developers** earn recurring revenue, encouraging innovative, high-quality dApps.  
+* **Validators** secure the chain and are compensated in native $XIAN.  
+* **Burns** create long-term deflationary pressure as network usage grows.  
+* **Foundation** funding supports tooling, marketing, and grants—fueling further adoption.
