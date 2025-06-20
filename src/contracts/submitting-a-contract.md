@@ -33,7 +33,7 @@ submit = xian.submit_contract(
 
 print(f'success: {submit["success"]}')
 print(f'tx_hash: {submit["tx_hash"]}')
-print(f'view tx in explorer: https://explorer.xian.org/tx/{submit["tx_hash"]}')
+print(f'view tx in explorer: https://testnet-explorer.xian.org/tx/{submit["tx_hash"]}')
 ```
 :::
 
