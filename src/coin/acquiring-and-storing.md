@@ -11,6 +11,7 @@ Below is a *fixed guide (17 Jun 2025)* on how to obtain and safeguard $XIAN, ref
 |--------|-------|---------|
 | **On-chain DEX (native token)** | **SNAKexchange** – [`XIAN/USDC` pair](https://snakexchange.org/pairs/) | Trade directly on the Xian Layer-1; liquidity is denominated in native $XIAN. |
 | **Bridged token (Solana)** | **Raydium** – [Swap link](https://raydium.io/swap/?inputMint=sol&outputMint=GnaXkbmMV1zGK6bRCQnM9Jd6Jv2Hjw5b2PFVBaKEE5At) | Purchase wrapped $XIAN on Solana, then bridge it to Xian for on-chain use. |
+| **Centralized exchange** | **Dex-Trade** – [`XIAN/USDT` pair](https://dex-trade.com/spot/trading/XIAN_USDT) | Buy $XIAN on a CEX using USDT; withdraw to your Xian wallet for native staking or dApps. |
 | **Bridge existing assets** | **Xian Bridge** – <https://bridge.xian.org> | Move SOL, USDC, or bridged $XIAN between Solana and the Xian mainnet. |
 | **Earn by participating** | • Provide liquidity or farm on SNAKexchange (100 %+ APR farms).<br>• Deploy dApps and collect 68 % of gas fees.<br>• Contribute to DAO bounties and governance. |
 | **Faucets** | • [Mainnet faucet](https://xian-faucet-mainnet.poc.workers.dev/)<br>• [Testnet faucet](https://xian-faucet.poc.workers.dev/) | Small starter amounts for testing and development. |
@@ -43,5 +44,5 @@ Below is a *fixed guide (17 Jun 2025)* on how to obtain and safeguard $XIAN, ref
 
 ## Conclusion
 
-With the Xian Wallet and the acquisition routes outlined above—native DEX trading, bridging, faucets, and on-chain earning—anyone can enter the Xian ecosystem quickly.  
+With the Xian Wallet and the acquisition routes outlined above—native DEX trading, centralized-exchange access, bridging, faucets, and on-chain earning—anyone can enter the Xian ecosystem quickly.  
 Follow the security guidelines, keep your software updated, and you’ll be ready to explore Python-powered dApps, yield opportunities, and on-chain governance with confidence.
