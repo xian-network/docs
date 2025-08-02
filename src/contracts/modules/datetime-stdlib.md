@@ -1,155 +1,147 @@
+# `datetime` Standard Library (Xian Smart‑Contracts)
 
-# datetime Standard Library
+Xian contracts expose a sandboxed **`datetime`** module that mirrors a safe subset of Python’s `datetime`, tailored for deterministic blockchain execution.  
+Everything runs in **UTC +0** and is fully deterministic across nodes.
 
-Every contract has a special `datetime` library available to it that mimicks some of the functionality of the Python equivalent. The following objects and constants are available:
+---
 
-## datetime.Datetime
+## `datetime.Datetime`
 
 ```python
-d = datetime.datetime(year, month, day, hour=0, minute=0, microsecond=0)
+d = datetime.datetime(
+    year, month, day,
+    hour=0, minute=0, second=0, microsecond=0
+)
 ```
 
-`datetime` is a pretty close mapping to the Python Datetime object. It requires the year, month, and day at the very least to initialize. All times are in UTC+0.
+* Minimum required: `year`, `month`, `day`.  
+* **Intentionally different from CPython**: no `tzinfo`, `fold`, or timezone‑aware operations—​all timestamps are absolute UTC.  
+* Attributes (`year`, `month`, `day`, `hour`, `minute`, `second`, `microsecond`) are read‑only.
 
 ### Comparisons
 
-A valid `Datetime` comparison takes another `Datetime` on the right side of the comparison. All comparisons return `True` or `False`.
-
 ```python
-d1 = datetime.datetime(year=2019, month=10, day=10)
-d2 = datetime.datetime(year=2019, month=10, day=11)
+d1 = datetime.datetime(2019, 10, 10)
+d2 = datetime.datetime(2019, 10, 11)
 
-# LESS THAN
-d1 > d2 # False
-d1 >= d2 # False
-
-# GREATER THAN
-d1 < d2 # True
-d1 <= d2 # True
-
-# EQUALITY
-d1 == d2 # False
-d1 != d2 # True
+d1 <  d2   # True
+d1 <= d2   # True
+d1 == d2   # False
+d1 != d2   # True
+d1 >  d2   # False
+d1 >= d2   # False
 ```
 
-### Operations
+### Arithmetic
 
-There are only two valid operations for `Datetime`. Addition takes a `Timedelta` and returns a new `Datetime` while subtraction takes another `Datetime` and returns a `Timedelta`.
-
-_Use addition to add an interval of time to a `Datetime`._
-
-_Use subtraction to calculate the interval of time between two `Datetime` objects._
-
-```python
-d = datetime.datetime(year=2019, month=10, day=10)
-t = datetime.timedelta(days=1)
-
-# ADDITION
-new_d = d + t # Returns new Datetime
-expected_new_d = datetime.datetime(year=2019, month=10, day=11)
-
-new_d == expected_new_d # True
-
-# SUBTRACTION
-new_t = new_d - d # Returns a timedelta. Should reverse the above operation
-
-new_t == t # True
-
-# STRING TO DATETIME
-
-date_string = "2019-10-10 10:10:10"
-datetime_from_str = datetime.datetime.strptime(date_string, "%Y-%m-%d %H:%M:%S")
-```
-## datetime.timedelta
+| Expression | Result type | Notes |
+|------------|-------------|-------|
+| `Datetime + Timedelta` | `Datetime` | shift forward |
+| `Datetime - Datetime`  | `Timedelta` | interval between two blocks |
 
 ```python
-t = datetime.timedelta(weeks=0, days=0, hours=0, minutes=0, seconds=0)
+d  = datetime.datetime(2019, 10, 10)
+t  = datetime.timedelta(days=1)
+
+d2 = d + t                     # 2019‑10‑11
+assert d2 - d == t             # True
 ```
 
-`Timedelta` is also a pretty close mapping to Python's own Timedelta object. It represents an interval of time which can be used to determine expiration dates, etc.
+### Parsing strings
 
-For example, if a transaction occurs on a smart contract 2 weeks after it has been initialized, the transactino can fail. If the transaction occurs within the 2 week interval, it would succeed.
+```python
+iso = "2019-10-10 10:10:10"
+d   = datetime.datetime.strptime(iso, "%Y-%m-%d %H:%M:%S")
+```
+
+---
+
+## `datetime.timedelta`
+
+```python
+t = datetime.timedelta(
+    weeks=0, days=0, hours=0, minutes=0, seconds=0
+)
+```
+
+Represents an **interval**—handy for lock‑ups, grace periods, &c.
 
 ### Comparisons
 
-Comparisons are between two `Timedelta` objects.
+Exactly the same six rich comparisons as `Datetime`.
 
-```python
-t1 = datetime.timedelta(weeks=1, days=1, hours=2)
-t2 = datetime.timedelta(weeks=1, days=1, hours=3)
+### Arithmetic
 
-# LESS THAN
-t1 > t2 # False
-t1 >= t2 # False
-
-# GREATER THAN
-t1 < t2 # True
-t1 <= t2 # True
-
-# EQUALITY
-t1 == t2 # False
-t1 != t2 # True
-```
-
-### Operations
-
-`Timedelta` operations are between other `Timedeltas`, and in one case, `int`. `Timedelta` supports addition, subtraction, and multiplication.
-
-_While it's technically possible to multiply `Timedelta` objects, it can produce strange results._
+| Expression | Result type | Example |
+|------------|-------------|---------|
+| `Timedelta + Timedelta` | `Timedelta` | `t1 + t2` |
+| `Timedelta - Timedelta` | `Timedelta` | `t2 - t1` |
+| `Timedelta * int`       | `Timedelta` | `t1 * 5` |
+| `Timedelta * Timedelta` | `Timedelta` | component‑wise product—**rarely useful** |
+| `Timedelta + Datetime`  | `Datetime` | forward shift (commutative with `Datetime + Timedelta`) |
+| `Timedelta - Datetime`  | `Datetime` | backward shift |
 
 ```python
 t1 = datetime.timedelta(weeks=1)
-t2 = datetime.timedelta(weeks=2)
+d  = datetime.datetime(2025, 1, 1)
 
-t3 = t1 + t2
-t3 == datetime.timedelta(weeks=3) # True
-
-t4 = t2 - t1
-t4 == datetime.timedelta(weeks=1) # True
-
-t5 = t1 * 5
-t5 == datetime.timedelta(weeks=5) # True
-
-t6 = t1 * t2
-t6 == datetime.timedelta(weeks=14) # True
+assert (t1 + d) == (d + t1)        # 2025‑01‑08
+assert (t1 * 4).weeks == 4
 ```
 
-### Constants
-
-The following `Timedelta` constants are available for you to use.
+### Quick accessors (total values)
 
 ```python
-datetime.WEEKS   == datetime.timedelta(weeks=1)   # True
-datetime.DAYS    == datetime.timedelta(days=1)    # True
-datetime.HOURS   == datetime.timedelta(hours=1)   # True
-datetime.MINUTES == datetime.timedelta(minutes=1) # True
-datetime.SECONDS == datetime.timedelta(seconds=1) # True
+t = datetime.timedelta(days=3, hours=5)
+
+t.seconds   # total seconds  (280 800)
+t.minutes   # total minutes  (4 680)
+t.hours     # total hours    (78)
+t.days      # total days     (3)
+t.weeks     # total weeks    (0)
 ```
 
-## now
-In the Xian blockchain, a special variable called `now` is passed into the execution environment. Contracting on its own does not have this variable available. You would have to add it into the environment yourself.
+> **Heads‑up :** Unlike CPython where `timedelta.seconds` is **only the seconds component in the final day (0‑86399)**, Xian’s implementation (and all the helper properties above) return the **total** amount in that unit. This avoids off‑by‑one‑day bugs in contract logic.
 
-If you always use the `ContractingClient` object you will not have to worry about this problem. The `ContractingClient` adds a `now` variable if you execute functions on an `AbstractContract` that is pulled from the state space.
+### Pre‑made constants
 
-However, if you use the raw `Executor` object, `now` will not be available. Proceed accordingly.
+```python
+datetime.WEEKS   # == datetime.timedelta(weeks=1)
+datetime.DAYS    # == datetime.timedelta(days=1)
+datetime.HOURS   # == datetime.timedelta(hours=1)
+datetime.MINUTES # == datetime.timedelta(minutes=1)
+datetime.SECONDS # == datetime.timedelta(seconds=1)
+```
 
-`now` is a `Datetime` object for when the block that the transaction is in has been submitted to the executors.
+---
+
+## `now` (block timestamp)
+
+Inside every contract call the global **`now`** is injected by the Xian executor:
+
+* Type : `Datetime`
+* Value : block‑submission time of the current transaction
 
 ```python
 EXPIRATION = datetime.timedelta(days=5)
 submission_time = Variable()
 
 @construct
-def set_submission_time():
-    submission_time.set(now) # Set's variable to when contract was submitted
+def init():
+    submission_time.set(now)          # capture deployment block‑time
 
 @export
-def has_expired():
-    if now - submission_time.get() > EXPIRATION:
-        return True
-    return False
+def has_expired() -> bool:
+    return (now - submission_time.get()) > EXPIRATION
 ```
 
-The above contract uses `now` in two distinct ways. First, it captures `now` when the contract is submitted and stored it into the state. Second, it references `now`, which will be the current time on subsequent contract executions, and compares it against the original `Datetime` stored.
+Use **`ContractingClient`** for tests —it auto‑fills `now`.  
+When using **`Executor`** directly you must inject `now` yourself.
 
-If the result is greater than the expiration provided as a constant, the contract returns true.
+---
+
+## Determinism & Security Notes
+
+* The library wraps CPython objects but blocks unsafe attributes to prevent side‑effects or non‑determinism.
+* Arithmetic is **pure**—no overflow, no floating‑point.
+* All times are absolute (UTC), so contracts behave identically on every node.
