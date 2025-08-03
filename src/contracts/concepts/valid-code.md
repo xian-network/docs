@@ -28,108 +28,67 @@ cars['balthasar'] = {
 Read more about storage in the Storage section.
 
 
-## Restricted Builtins
+### Notable Restricted Builtins
 
-Certain builtins such as `exec`, `eval`, and `compile` are obviously dangerous. We do not want to allow any arbitrary execution of code.
+Here are some notable ones with reasons for their restriction:
 
-Here is a list of most Python3.11 builtin functions versus the ones we allow in Contracting. NOTE: All exceptions except the base Exception class are removed from Contracting.
+| Built-In       | Reason for Restriction                                                                                   |
+|----------------|---------------------------------------------------------------------------------------------------------|
+| `callable()`   | Functions are not passed as objects in Contracting.                                                     |
+| `classmethod()`| Classes are disabled in Contracting.                                                                    |
+| `compile()`    | Arbitrary code execution is a high security risk.                                                       |
+| `complex()`    | Complex numbers are potentially non-deterministic. This is a consensus failure risk.                    |
+| `delattr()`    | Arbitrary removal of Python attributes could allow unauthorized access to private objects and methods.  |
+| `dir()`        | Allows exploration path into security exploit development.                                              |
+| `enumerate()`  | Not included in the allowed list.                                                                       |
+| `eval()`       | Arbitrary code execution is a high security risk.                                                       |
+| `exec()`       | Arbitrary code execution is a high security risk.                                                       |
+| `float()`      | Floating point precision issues can lead to consensus failures.                                         |
+| `getattr()`    | Arbitrary access to attributes could allow private function execution.                                  |
+| `globals()`    | Access to global scope methods allows modification of private methods and direct storage mechanisms.    |
+| `hasattr()`    | Allows exploration path into security exploit development.                                              |
+| `hash()`       | Potentially non-deterministic outcomes. Consensus failure risk.                                         |
+| `id()`         | Potentially non-deterministic outcomes. Consensus failure risk.                                         |
+| `input()`      | User input not supported.                                                                               |
+| `iter()`       | Potential mutation of objects that are only supposed to be interfaced with through particular methods.  |
+| `locals()`     | Access to local scope methods allows modification of private methods.                                   |
+| `memoryview()` | Potentially non-deterministic outcomes. Consensus failure risk.                                         |
+| `next()`       | Related to iter(), not included in the allowed list.                                                    |
+| `object()`     | Base class for all classes, not needed since classes are disabled.                                      |
+| `open()`       | File I/O not supported.                                                                                 |
+| `property()`   | Property creation not supported because classes are disabled.                                           |
+| `repr()`       | Potentially non-deterministic due to memory address as output. Consensus failure risk.                  |
+| `setattr()`    | Arbitrary setting of Python attributes has storage corruption and private method access implications.   |
+| `staticmethod()`| Static methods are not supported because classes are disabled.                                         |
+| `super()`      | Super is not supported because classes are disabled.                                                    |
+| `vars()`       | Allows exploration path into security exploit development.                                              |
 
-| Built-Ins    | Python3.11 | Contracting | Reason for Restriction                                                                                   |
-|--------------|------------|-------------|---------------------------------------------------------------------------------------------------------|
-| `abs()`      | ✓          | ✓           |                                                                                                         |
-| `all()`      | ✓          | ✓           |                                                                                                         |
-| `any()`      | ✓          | ✓           |                                                                                                         |
-| `ascii()`    | ✓          | ✓           |                                                                                                         |
-| `bin()`      | ✓          | ✓           |                                                                                                         |
-| `bool()`     | ✓          | ✓           |                                                                                                         |
-| `bytearray()`| ✓          | ✓           |                                                                                                         |
-| `bytes()`    | ✓          | ✓           |                                                                                                         |
-| `callable()` | ✓          | ✘           | Functions are not passed as objects in Contracting.                                                     |
-| `chr()`      | ✓          | ✓           |                                                                                                         |
-| `classmethod()`| ✓        | ✘           | Classes are disabled in Contracting.                                                                    |
-| `compile()`  | ✓          | ✘           | Arbitrary code execution is a high security risk.                                                       |
-| `complex()`  | ✓          | ✘           | Complex numbers are potentially non-deterministic. This is a consensus failure risk.                    |
-| `copyright`  | ✓          | ✘           | Unnecessary.                                                                                            |
-| `credits`    | ✓          | ✘           | Unnecessary.                                                                                            |
-| `delattr()`  | ✓          | ✘           | Arbitrary removal of Python attributes could allow unauthorized access to private objects and methods.  |
-| `dict()`     | ✓          | ✓           |                                                                                                         |
-| `dir()`      | ✓          | ✘           | Allows exploration path into security exploit development.                                              |
-| `divmod()`   | ✓          | ✓           |                                                                                                         |
-| `enumerate()`| ✓          | ✘           | Potentially safe. Evaluating to make sure.                                                              |
-| `eval()`     | ✓          | ✘           | Arbitrary code execution is a high security risk.                                                       |
-| `exec()`     | ✓          | ✘           | Arbitrary code execution is a high security risk.                                                       |
-| `filter()`   | ✓          | ✓           |                                                                                                         |
-| `float()`    | ✓          | ✘           | Floating point precision issues can lead to consensus failures.                                         |
-| `format()`      | ✓          | ✓           |                                                                                                         |
-| `frozenset()`   | ✓          | ✓           |                                                                                                         |
-| `getattr()`     | ✓          | ✘           | Arbitrary access to attributes could allow private function execution.                                  |
-| `globals()`     | ✓          | ✘           | Access to global scope methods allows modification of private methods and direct storage mechanisms.    |
-| `hasattr()`     | ✓          | ✘           | Allows exploration path into security exploit development.                                              |
-| `hash()`        | ✓          | ✘           | Potentially non-deterministic outcomes. Consensus failure risk.                                         |
-| `help()`        | ✓          | ✘           | Unnecessary.                                                                                            |
-| `hex()`         | ✓          | ✓           |                                                                                                         |
-| `id()`          | ✓          | ✘           | Potentially non-deterministic outcomes. Consensus failure risk.                                         |
-| `input()`       | ✓          | ✘           | User input not supported.                                                                               |
-| `int()`         | ✓          | ✓           |                                                                                                         |
-| `isinstance()`  | ✓          | ✓           |                                                                                                         |
-| `issubclass()`  | ✓          | ✓           |                                                                                                         |
-| `iter()`        | ✓          | ✘           | Potential mutation of objects that are only supposed to be interfaced with through particular methods. |
-| `len()`         | ✓          | ✓           |                                                                                                         |
-| `license`       | ✓          | ✘           | Unnecessary.                                                                                            |
-| `list()`        | ✓          | ✓           |                                                                                                         |
-| `locals()`      | ✓          | ✘           | See globals()                                                                                           |
-| `map()`         | ✓          | ✓           |                                                                                                         |
-| `max()`         | ✓          | ✓           |                                                                                                         |
-| `memoryview()`  | ✓          | ✘           | Potentially non-deterministic outcomes. Consensus failure risk.                                         |
-| `min()`         | ✓          | ✓           |                                                                                                         |
-| `next()`        | ✓          | ✘           | See iter()                                                                                              |
-| `object()`      | ✓          | ✘           | See callable()                                                                                          |
-| `oct()`         | ✓          | ✓           |                                                                                                         |
-| `open()`        | ✓          | ✘           | File I/O not supported.                                                                                 |
-| `ord()`         | ✓          | ✓           |                                                                                                         |
-| `pow()`         | ✓          | ✓           |                                                                                                         |
-| `print()`       | ✓          | ✓           |                                                                                                         |
-| `property()`    | ✓          | ✘           | Property creation not supported because classes are disabled.                                           |
-| `range()`       | ✓          | ✓           |                                                                                                         |
-| `repr()`        | ✓          | ✘           | Unnecessary and non-deterministic due to memory address as output of this function. This is a consensus failure risk. |
-| `reversed()`    | ✓          | ✓           |                                                                                                         |
-| `round()`       | ✓          | ✓           |                                                                                                         |
-| `set()`         | ✓          | ✓           |                                                                                                         |
-| `setattr()`     | ✓          | ✘           | Arbitrary setting and overwriting of Python attributes has storage corruption and private method access implications. |
-| `slice()`       | ✓          | ✘           | Unnecessary.                                                                                            |
-| `sorted()`      | ✓          | ✓           |                                                                                                         |
-| `staticmethod()`| ✓          | ✘           | Static methods are not supported because classes are disabled.                                          |
-| `str()`         | ✓          | ✓           |                                                                                                         |
-| `sum()`         | ✓          | ✓           |                                                                                                         |
-| `super()`       | ✓          | ✘           | Super is not supported because classes are disabled.                                                    |
-| `tuple()`       | ✓          | ✓           |                                                                                                         |
-| `type()`        | ✓          | ✓           |                                                                                                         |
-| `vars()`        | ✓          | ✘           | Allows exploration path into security exploit development.                                              |
-| `zip()`         | ✓          | ✓           |                                                                                                         |
-
+Note: All exceptions except the base Exception class are also removed from Contracting.
 
 ## Illegal AST Nodes
 
-Similarly, some of the AST (abstract syntax tree) nodes that make up deeper levels of the Python syntax are not allowed. Mainly, the nodes around the async/await features are restricted.
+The Contracting linter restricts certain Python syntax by checking for specific AST (Abstract Syntax Tree) nodes. The following AST nodes are explicitly forbidden:
 
 | AST Node | Reason for Restriction |
 |----------|------------------------|
-| [ast.AsyncFor](https://greentreesnakes.readthedocs.io/en/latest/nodes.html#AsyncFor) | All async code is invalid in Contracting. |
-| [ast.AsyncFunctionDef](https://greentreesnakes.readthedocs.io/en/latest/nodes.html#AsyncFunctionDef) | All async code is invalid in Contracting. |
-| [ast.AsyncWith](https://greentreesnakes.readthedocs.io/en/latest/nodes.html#AsyncWith) | All async code is invalid in Contracting. |
-| ast.AugLoad | AST Node never used in current CPython implementation. |
-| ast.AugStore | AST Node never used in current CPython implementation. |
-| [ast.Await](https://greentreesnakes.readthedocs.io/en/latest/nodes.html#Await) | All async code is invalid in Contracting. |
-| [ast.ClassDef](https://greentreesnakes.readthedocs.io/en/latest/nodes.html#ClassDef) | Classes are disabled in Contracting. |
-| [ast.Ellipsis](https://greentreesnakes.readthedocs.io/en/latest/nodes.html#Ellipsis) | Ellipsis should not be defined in a smart contract. They may be an effect of one. |
-| [ast.GeneratorExp](https://greentreesnakes.readthedocs.io/en/latest/nodes.html#GeneratorExp) | Generators hold state that is incompatible with Contracting's model. |
-| [ast.Global](https://greentreesnakes.readthedocs.io/en/latest/nodes.html#Global) | Scope modification could have security implications. |
-| ast.Interactive | Only available in Python interpreters. Potential security risk. |
-| [ast.MatMult](https://greentreesnakes.readthedocs.io/en/latest/nodes.html#MatMult) | New AST feature. Not yet widely adopted. Potential security risk. |
-| [ast.Nonlocal](https://greentreesnakes.readthedocs.io/en/latest/nodes.html#Nonlocal) | Scope modification could have security implications. |
-| ast.Suite | Similar to ast.Interactive |
-| [ast.Yield](https://greentreesnakes.readthedocs.io/en/latest/nodes.html#Yield) | Generator related code is not compatible with Contracting. |
-| [ast.YieldFrom](https://greentreesnakes.readthedocs.io/en/latest/nodes.html#YieldFrom) | Generator related code is not compatible with Contracting. |
+| `ast.AsyncFor` | All async code is invalid in Contracting. Async operations are non-deterministic. |
+| `ast.AsyncFunctionDef` | All async code is invalid in Contracting. Async operations are non-deterministic. |
+| `ast.AsyncWith` | All async code is invalid in Contracting. Async operations are non-deterministic. |
+| `ast.Await` | All async code is invalid in Contracting. Async operations are non-deterministic. |
+| `ast.ClassDef` | Classes are disabled in Contracting to enforce procedural programming. |
+| `ast.Ellipsis` | Ellipsis should not be defined in a smart contract. They may be an effect of one. |
+| `ast.GeneratorExp` | Generators hold state that is incompatible with Contracting's deterministic execution model. |
+| `ast.Global` | Scope modification could have security implications by allowing access to variables outside the intended scope. |
+| `ast.ImportFrom` | Selective importing is not supported to prevent importing potentially dangerous modules. |
+| `ast.Interactive` | Only available in Python interpreters. Potential security risk. |
+| `ast.Lambda` | Lambda functions can hide complex logic and make contracts harder to audit. |
+| `ast.MatMult` | Matrix multiplication operator (@) is not supported. |
+| `ast.Nonlocal` | Scope modification could have security implications by allowing access to variables outside the intended scope. |
+| `ast.Suite` | Similar to ast.Interactive, not needed in contract code. |
+| `ast.Try` | Exception handling can lead to non-deterministic execution paths. |
+| `ast.With` | Context managers can have side effects that are difficult to predict. |
+| `ast.Yield` | Generator related code is not compatible with Contracting's deterministic execution model. |
+| `ast.YieldFrom` | Generator related code is not compatible with Contracting's deterministic execution model. |
 
 ## Violations
 
@@ -140,12 +99,12 @@ The linter will check for several violations that will fail your smart contract 
 Thrown when an AST type that is not allowed is visited by the linter.
 
 ```python
-2 @ 2 # ast.MatMul code
+2 @ 2  # ast.MatMult code
 ```
 
 #### S2- Illicit use of '\_' before variable
 
-\_ is used for gating certain functionality. Using it as a prefix to any variable will cause failure
+\_ is used for gating certain functionality. Using it as a prefix to any variable will fail.
 
 ```python
 _balances = Hash()
@@ -160,14 +119,15 @@ import this_wont_fail
 
 @construct
 def seed():
-	import this_will
+    import this_will  # This will fail
 ```
+
 #### S4- ImportFrom compilation nodes not yet supported
 
 Selective importing is not supported and will fail contracts.
 
 ```python
-from token import send
+from token import send  # This will fail
 ```
 
 #### S5- Contract not found in lib
@@ -179,7 +139,7 @@ Not currently used.
 Classes are not supported in Contracting and their keywords will fail your contract.
 
 ```python
-class Car:
+class Car:  # This will fail
     def __init__(self, make, model):
         self.make = make
         self.model = model
@@ -190,7 +150,7 @@ class Car:
 Any async related code will fail the contract.
 
 ```python
-async def fail_me():
+async def fail_me():  # This will fail
     pass
 ```
 
@@ -208,7 +168,7 @@ def seed():
 def get_v():
     return v.get()
 
-@unknown
+@unknown  # This will fail
 def this_will_fail():
     pass
 ```
@@ -223,7 +183,7 @@ v = Variable()
 def seed():
     v.set(123)
 
-@construct
+@construct  # This will fail
 def seed_2():
     v.set(999)
 ```
@@ -235,7 +195,7 @@ Stacking decorators is not allowed.
 ```python
 v = Variable()
 @export
-@construct
+@construct  # This will fail
 def seed():
     v.set(777)
 ```
@@ -245,9 +205,9 @@ def seed():
 ORM arguments are injected into the \_\_init\_\_ function on runtime. Messing with these will fail your contract.
 
 ```python
-v = Variable(contract='token')
-w = Variable(driver=None)
-x = Variable(another_kwarg='this will fail')
+v = Variable(contract='token')  # This will fail
+w = Variable(driver=None)  # This will fail
+x = Variable(another_kwarg='this will fail')  # This will fail
 
 @export
 def set():
@@ -261,7 +221,7 @@ def set():
 Python allows multiple assignment. Trying to do a multiple assignment from an ORM object will fail your contract.
 
 ```python
-x, y = Hash()
+x, y = Hash()  # This will fail
 @export
 def set():
     x['bill'] = 100
@@ -276,6 +236,7 @@ A contract without a single `@export` decorator is invalid.
 @construct
 def seed():
     pass
+# This will fail because there's no @export function
 ```
 
 #### S14- Illegal use of a builtin
@@ -285,7 +246,7 @@ Referencing a builtin that is illegal will fail the contract.
 ```python
 @export
 def credits():
-    return credits
+    return credits  # This will fail
 ```
 
 #### S15- Reuse of ORM name definition in a function definition argument name
@@ -296,6 +257,51 @@ Reuse of any ORM names in any loops, functions, etc. will fail the contract.
 used_once = Variable()
 
 @export
-def override():
-    used_once = 123
+def override(used_once):  # This will fail
+    return used_once
+```
+
+#### S16- Illegal argument annotation used
+
+Only certain types are allowed for argument annotations. The allowed types are:
+```
+'dict', 'list', 'str', 'int', 'float', 'bool', 'datetime.timedelta', 'datetime.datetime', 'Any'
+```
+
+```python
+@export
+def invalid_annotation(x: complex):  # This will fail
+    return x
+```
+
+#### S17- No valid argument annotation found
+
+Missing argument annotations will fail the contract.
+
+```python
+@export
+def missing_annotation(x):  # This will fail
+    return x
+```
+
+#### S18- Illegal use of return annotation
+
+Return annotations are not allowed in Contracting.
+
+```python
+@export
+def invalid_return() -> int:  # This will fail
+    return 42
+```
+
+#### S19- Illegal use of a nested function definition
+
+Nested functions are not allowed in Contracting.
+
+```python
+@export
+def outer_function():
+    def inner_function():  # This will fail
+        return 42
+    return inner_function()
 ```
