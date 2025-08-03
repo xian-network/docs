@@ -127,7 +127,7 @@ from contracting.client import ContractingClient
 class TestSmartContract(TestCase):
     def setUp(self):
         self.c = ContractingClient(metering=True) # set metering to true
-        self.client.executor.bypass_balance_amount = True # set the `bypass_balance_amount` flag on the client's executor to True
+        self.c.executor.bypass_balance_amount = True # set the `bypass_balance_amount` flag on the client's executor to True
         self.c.flush()
 
 #- - - - - - - - - - - - - - - - - -
