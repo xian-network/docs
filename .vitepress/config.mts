@@ -93,6 +93,7 @@ export default defineConfig({
                             { text: 'xian-py', link: '/tools/xian-py' },
                             { text: 'Browser Wallet', link: '/tools/browser-wallet' },
                             { text: 'dApp Wallet Utils', link: '/tools/xian-wallet-utils' },
+                            { text: 'Xian VS Code Extension', link: '/tools/xian-vs-code-extension' },
                             { text: 'Contract Dev Environment', link: '/tools/contract-dev-environment' },
 { text: 'Faucet', link: '/tools/faucet' },
                         ]
