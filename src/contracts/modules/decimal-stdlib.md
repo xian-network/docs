@@ -2,8 +2,6 @@
 
 Xian smart contracts provide a sandboxed `decimal` type for high-precision, deterministic arithmetic, which is essential for financial calculations and other applications where floating-point inaccuracies are unacceptable.
 
-Standard Python `float` types are prohibited in smart contracts because their behavior can be non-deterministic across different machine architectures. The `decimal` type solves this by providing a fixed-point number implementation that behaves identically on every node.
-
 Under the hood, this module is a secure wrapper around Python's standard `Decimal` library, configured for blockchain execution.
 
 ---
