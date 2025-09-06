@@ -26,11 +26,16 @@ export default defineConfig({
                 text: "Development",
                 collapsed: false,
                 items: [
+                    { text: 'Tutorials', collapsed: true, items: [
+                                    { text: 'Creating A Token', link: '/tutorials/creating-a-token' },
+                                ]
+                            },
 
                     {
                         text: 'Smart Contracts',
                         collapsed: true,
                         items: [
+                            
                             { text: 'Contracting Engine', link: '/contracts/' },
                             { text: 'Cheat Sheet', link: '/contracts/cheat-sheet' },
                             { text: 'Context', link: '/contracts/context' },
