@@ -26,7 +26,7 @@ export default defineConfig({
                 text: "Development",
                 collapsed: false,
                 items: [
-                    { text: 'Tutorials', collapsed: true, items: [
+                    { text: 'Tutorials', collapsed: false, items: [
                                     { text: 'Creating A Token', link: '/tutorials/creating-a-token' },
                                 ]
                             },

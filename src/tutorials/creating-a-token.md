@@ -2,7 +2,7 @@
 
 Xian is a **developer‑friendly layer‑1 blockchain** designed around Python smart contracts. The network’s native coin ($XIAN) powers transaction fees and governance, and a chrome extension wallet makes it easy for anyone to deploy tokens without writing any code.  This guide walks through each step — from installing the wallet to adding liquidity on SNAKexchange — and highlights the **best practices** recommended in Xian’s documentation.
 
-## 1 Prerequisites
+## Prerequisites
 
 | Requirement | Why you need it |
 |---|---|
@@ -12,7 +12,7 @@ Xian is a **developer‑friendly layer‑1 blockchain** designed around Python s
 
 > **Security tips:**  Back up your private key and only install the wallet from official links.
 
-## 2 Install and Set Up the Xian Wallet
+## Install and Set Up the Xian Wallet
 
 1. **Install the extension.**  Go to the Chrome Web Store link provided in the docs and add the **Xian Wallet**.  Once installed, click its icon and create a new wallet.  The wallet UI is simple — it lets you hold and transfer tokens, execute smart‑contract calls and more.
 2. **Secure your private key.**  Backup the private key. The wallet cannot recover lost keys.
@@ -22,7 +22,7 @@ Once your wallet is funded, you’ll see the default **Xian** and **xUSDC** bala
 
 ![Xian Wallet showing XIAN and xUSDC balances, with Create Token button highlighted](../img/branded_clean_token_tutorial1.png)
 
-## 3 Create Your Token
+## Create Your Token
 
 The Xian wallet includes a no‑code **Token Creator** that deploys a fungible token adhering to Xian’s token standards.  Each token is a smart contract on the blockchain; you simply choose the parameters.  Follow these steps:
 
@@ -30,7 +30,7 @@ The Xian wallet includes a no‑code **Token Creator** that deploys a fungible t
 2. **Fill in token details.**  The following fields are required:
 
    - **Token Name and Symbol** – human‑readable name and ticker (e.g., *Shiba Inu* and *SHIB*).  Symbols should be short and unique.
-   - **Token Supply** – the total amount of tokens minted to your address.  This supply will be available in your wallet immediately after creation.  There is currently no built‑in mint/burn function, so choose a supply you’re comfortable with.
+   - **Token Supply** – the total amount of tokens minted to your address.  This supply will be available in your wallet immediately after creation.  There is currently no built‑in mint/burn function, so choose a supply you’re comfortable with. Important: Keep the supply under 100 trillion (100,000,000,000,000) or it will not work on SNAKexchange.
    - **Token Contract Name** – the smart‑contract identifier.  All Xian contracts start with `con_`; the name must be unique (e.g., `con_shiba_inu`).  You will share this contract name with others when listing the token on dApps.
 
    Optional fields include a **Token Logo URL** (a 1:1 PNG hosted on GitHub or IPFS) and a **Token Website URL**.  These details improve your token’s appearance in wallets and explorers.  An example form is shown below:
@@ -55,7 +55,7 @@ After creation, navigate back to the wallet home.  You’ll see your new token l
 - **Record your contract name.**  Others will need the `con_…` identifier to add the token in their wallets or dApps.
 - **Budget for fees.**  Stamps convert dynamically to $XIAN based on governance decisions.  Fees for token creation are usually small (as seen in the screenshot) but they may fluctuate.
 
-## 4 Add Liquidity on SNAKexchange
+## Add Liquidity on SNAKexchange
 
 Creating a token doesn’t automatically make it tradeable.  You need to provide liquidity so that others can swap the token on SNAKexchange (Xian’s native DEX).  Liquidity is provided by depositing equal‑value amounts of two tokens into a liquidity pool.  Here’s how to set up a trading pair for your new token against XIAN:
 
@@ -82,7 +82,7 @@ After a brief wait, the pair will appear in the **Pairs** section of SNAKexchang
 ![SNAKexchange Swap tab showing trade details](../img/branded_clean_token_tutorial8.png)
 
 
-## 5 Summary & Next Steps
+## Summary & Next Steps
 
 By following this guide you have:
 
