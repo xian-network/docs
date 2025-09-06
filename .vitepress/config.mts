@@ -39,8 +39,7 @@ export default defineConfig({
         text: 'Build (Tutorials)',
         collapsed: false,
         items: [
-          { text: 'Creating a Token', link: '/tutorials/creating-a-token' },
-          { text: 'dApp Starters', link: '/dapp-starters/' }
+          { text: 'Creating a Token', link: '/tutorials/creating-a-token' }
         ]
       },
 
@@ -135,6 +134,7 @@ export default defineConfig({
         text: 'SDKs & Tools',
         collapsed: true,
         items: [
+          { text: 'dApp Starters', link: '/dapp-starters/' },
           { text: 'xian-js', link: '/tools/xian-js' },
           { text: 'xian-py', link: '/tools/xian-py' },
           { text: 'Browser Wallet', link: '/tools/browser-wallet' },
