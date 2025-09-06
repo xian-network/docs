@@ -1,5 +1,18 @@
 # Submitting a Contract
 
+## Browser Wallet
+
+:::tip Using the Browser Wallet IDE
+Installation info @ [Browser Wallet](/tools/browser-wallet)
+- Paste your contract code into the IDE.
+- Hit "Deploy Contract" to submit your contract to the network.
+- Once submitted, you can view your transaction in the explorer.
+<div style="text-align: center; height: 70%; width: 100%; padding: 5%">
+<img src="./submitting-a-contract-browser-ide.png" alt="Submitting a contract through the Browser Wallet IDE" />
+</div>
+
+:::
+
 ## Using Python
 :::tip Using the `xian-py` library
 [xian-py](/tools/xian-py)
@@ -116,15 +129,3 @@ console.log({send_res})
 </div>
 :::
 
-## Browser Wallet
-
-:::tip Using the Browser Wallet IDE
-Installation info @ [Browser Wallet](/tools/browser-wallet)
-- Paste your contract code into the IDE.
-- Hit "Deploy Contract" to submit your contract to the network.
-- Once submitted, you can view your transaction in the explorer.
-<div style="text-align: center; height: 70%; width: 100%; padding: 5%">
-<img src="./submitting-a-contract-browser-ide.png" alt="Submitting a contract through the Browser Wallet IDE" />
-</div>
-
-:::
