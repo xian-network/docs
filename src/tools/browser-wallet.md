@@ -11,10 +11,6 @@ It provides tools to :
 - Deploy Smart Contracts
 - Manage your Xian Account
 
-It comes in two versions:
-
-- Web Based wallet
-    - Can be found @ [https://wallet.xian.org](https://wallet.xian.org)
 - Browser Extension
     - Can be found @ [chrome web store](https://chromewebstore.google.com/detail/xian-wallet/kcimjjhplbcgkcnanijkolfillgfanlc)
 
