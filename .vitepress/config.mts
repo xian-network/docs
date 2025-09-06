@@ -60,6 +60,7 @@ export default defineConfig({
         text: 'Reference',
         collapsed: false,
         items: [
+            { text: 'Cheat Sheet', link: '/contracts/cheat-sheet' }, // ⬅ added here
           {
             text: 'Contract Language',
             collapsed: false,
