@@ -7,7 +7,7 @@ Xian is a **developer‑friendly layer‑1 blockchain** designed around Python s
 | Requirement | Why you need it |
 |---|---|
 | Xian Wallet extension | This web‑based wallet lets you interact with Xian dApps and deploy tokens.  Install it from the [Chrome Web Store](https://chromewebstore.google.com/detail/xian-wallet/kcimjjhplbcgkcnanijkolfillgfanlc). |
-| XIAN tokens | Creating a token consumes **stamps**, which are paid with $XIAN. Acquire XIAN via [SNAKexchange](https://snakexchange.org), [Dex-Trade](https://dex-trade.com/spot/trading/XIANUSDT?interface=classic), the [Xian bridge](https://bridge.xian.org) (After you bought on Raydium) or [(Testnet) Faucet](https://xian-faucet.poc.workers.dev/). |
+| XIAN tokens | Creating a token consumes **stamps**, which are paid with $XIAN. Acquire XIAN via [SNAKexchange](https://snakexchange.org), [Dex-Trade](https://dex-trade.com/spot/trading/XIANUSDT?interface=classic), the [Xian bridge](https://bridge.xian.org) (After you bought on [Raydium](https://raydium.io/swap/?inputMint=sol&outputMint=GnaXkbmMV1zGK6bRCQnM9Jd6Jv2Hjw5b2PFVBaKEE5At)) or [(Testnet) Faucet](https://xian-faucet.poc.workers.dev/). |
 | A computer with Chrome | The Xian Wallet extension currently supports Chromium‑based browsers. |
 
 > **Security tips:**  Back up your private key and only install the wallet from official links.
