@@ -135,7 +135,7 @@ print('safe[alice] =', safe.get_balance(account='alice')) # Should be 150
 Run the demo:
 
 ```bash
-pip install xian-contracting
+pip install git+https://github.com/xian-network/xian-contracting pytest
 python demo_safe.py
 ```
 
