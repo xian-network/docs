@@ -39,7 +39,8 @@ export default defineConfig({
         text: 'Build (Tutorials)',
         collapsed: false,
         items: [
-          { text: 'Creating a Token', link: '/tutorials/creating-a-token' }
+          { text: 'Creating a Token', link: '/tutorials/creating-a-token' },
+          { text: 'Your First Smart Contract', link: '/tutorials/your_first_smart_contract' },
         ]
       },
 
