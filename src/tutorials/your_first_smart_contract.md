@@ -247,7 +247,7 @@ if __name__ == "__main__":
 Run tests:
 
 ```bash
-pip install xian-contracting pytest
+pip install git+https://github.com/xian-network/xian-contracting pytest
 pytest -q
 ```
 
